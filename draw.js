@@ -23,6 +23,10 @@ const COUNTRY_CODES = new Set([
   "NED", "NZL", "PHI", "POL", "POR", "ROU", "RSA", "RUS", "SRB", "SLO", "SUI", "SVK", "TPE", "TUN", "TUR",
   "UKR", "URU", "USA",
 ]);
+const OCR_NAME_CORRECTIONS = new Map([
+  ["liam", "Li Ann"],
+  ["liann", "Li Ann"],
+]);
 const TESSERACT_SOURCES = [
   {
     script: "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js",
@@ -1204,7 +1208,7 @@ function cleanOcrLine(line) {
   const qualifierLabel = canonicalQualifierLabel(value);
   if (qualifierLabel) return qualifierLabel;
 
-  return cleanEntryName(value);
+  return applyOcrNameCorrection(cleanEntryName(value));
 }
 
 function stripTrailingOcrMeta(value) {
@@ -1243,10 +1247,13 @@ function stripTrailingEntryMark(value) {
 
 function stripTrailingCountryCode(value) {
   const parts = String(value || "").trim().split(/\s+/).filter(Boolean);
-  if (parts.length < 3) return value;
+  if (parts.length < 2) return value;
 
   const last = parts.at(-1);
-  if (/^[A-Za-z]{3}$/.test(last)) {
+  if (COUNTRY_CODES.has(last.toUpperCase())) {
+    return parts.slice(0, -1).join(" ");
+  }
+  if (parts.length >= 3 && /^[A-Za-z]{3}$/.test(last)) {
     return parts.slice(0, -1).join(" ");
   }
   return value;
@@ -1274,12 +1281,15 @@ function isOcrNoise(line) {
 }
 
 function findPlayerByImportedName(entry) {
-  const cleaned = cleanEntryName(entry);
+  const cleaned = applyOcrNameCorrection(cleanEntryName(entry));
   const exact = state.playerByName.get(normalizeName(cleaned));
   if (exact) return exact;
 
   const key = normalizeSearch(cleaned);
   if (!key) return null;
+
+  const prefixMatch = findPlayerByTokenPrefix(cleaned);
+  if (prefixMatch) return prefixMatch;
 
   let best = null;
   let secondScore = 0;
@@ -1335,11 +1345,62 @@ function isQualifier(value) {
   return Boolean(canonicalQualifierLabel(value));
 }
 
+function applyOcrNameCorrection(value) {
+  const cleaned = String(value || "").trim();
+  return OCR_NAME_CORRECTIONS.get(normalizeSearch(cleaned)) || cleaned;
+}
+
+function findPlayerByTokenPrefix(entry) {
+  const matches = [];
+
+  for (const player of state.players) {
+    const matched = playerSearchAliases(player).some((alias) => tokenPrefixMatch(entry, alias));
+    if (matched) matches.push(player);
+  }
+
+  const unique = new Map(matches.map((player) => [normalizeName(player.name), player]));
+  return unique.size === 1 ? [...unique.values()][0] : null;
+}
+
+function tokenPrefixMatch(entry, alias) {
+  const entryTokens = normalizedNameTokens(entry);
+  const aliasTokens = normalizedNameTokens(alias);
+  if (entryTokens.length < 2 || entryTokens.length > aliasTokens.length) return false;
+
+  for (let index = 0; index < entryTokens.length; index += 1) {
+    const input = entryTokens[index];
+    const target = aliasTokens[index];
+    if (!target) return false;
+    if (input === target) continue;
+    if (input.length >= 3 && target.startsWith(input)) continue;
+    return false;
+  }
+
+  return true;
+}
+
+function normalizedNameTokens(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter(Boolean);
+}
+
 function canonicalQualifierLabel(value) {
-  const cleaned = normalizeSearch(stripTrailingOcrMeta(value));
+  const stripped = stripTrailingOcrMeta(value)
+    .replace(/^(?:Q|W|WC|LL|PR|SR|SE)\s+/i, "")
+    .trim();
+  const cleaned = normalizeSearch(stripped);
   if (!cleaned) return null;
   if (cleaned === "q") return QUALIFIER_LABEL;
   if (cleaned.includes("qualif")) return QUALIFIER_LABEL;
+  if (cleaned.includes("qualifier") || cleaned.includes("qualifie")) return QUALIFIER_LABEL;
+  if (/^qual[a-z]{0,6}$/.test(cleaned)) return QUALIFIER_LABEL;
+  if (similarity(cleaned, "qualifiee") >= 0.66 || similarity(cleaned, "qualifier") >= 0.66) {
+    return QUALIFIER_LABEL;
+  }
   return null;
 }
 
