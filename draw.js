@@ -15,6 +15,7 @@ const BASE_Y = 18;
 const SECTION_COLUMNS = [42, 250, 456, 662, 868];
 const FINAL_COLUMNS = [72, 306, 540, 774];
 const QUALIFIER_OPTION = "__qualifier__";
+const QUALIFIER_LABEL = "Qualifiee";
 const DRAW_STORAGE_KEY = "wtaPredictor.drawState.v1";
 const COUNTRY_CODES = new Set([
   "ARG", "ARM", "AUS", "AUT", "BEL", "BIH", "BLR", "BRA", "BUL", "CAN", "CHN", "COL", "CRO", "CZE", "DEN",
@@ -678,7 +679,8 @@ function renderSlotNumber(slotIndex, row) {
 function renderEntryCell(slotIndex, row) {
   const player = state.slots[slotIndex];
   const label = player ? playerLabel(player) : "Blank / BYE";
-  const tooltip = player?.rank && player.rank < 9999 ? `${label} (#${player.rank})` : label;
+  const showRank = player?.rank && player.rank < 9999 && !player.isQualifier;
+  const tooltip = showRank ? `${label} (#${player.rank})` : label;
   return `
     <button
       class="bracket-cell entry-cell ${player ? "has-player" : ""}"
@@ -689,7 +691,7 @@ function renderEntryCell(slotIndex, row) {
       title="${escapeHtml(tooltip)}"
     >
       <span>${player ? escapeHtml(label) : ""}</span>
-      ${player?.rank && player.rank < 9999 ? `<em>#${escapeHtml(player.rank)}</em>` : ""}
+      ${showRank ? `<em>#${escapeHtml(player.rank)}</em>` : ""}
     </button>
   `;
 }
@@ -1047,7 +1049,7 @@ function renderPickerOptions(query) {
       <em>empty slot</em>
     </button>
     <button class="slot-option is-empty-option" type="button" data-player-option="${QUALIFIER_OPTION}">
-      <span>qualifiee</span>
+      <span>${QUALIFIER_LABEL}</span>
       <em>Q slot</em>
     </button>
     ${matches.length ? matches.map(renderPlayerOption).join("") : `<div class="player-empty">No available players found</div>`}
@@ -1055,10 +1057,11 @@ function renderPickerOptions(query) {
 }
 
 function renderPlayerOption(player) {
+  const meta = player.isQualifier ? "Q slot" : player.rank && player.rank < 9999 ? `#${escapeHtml(player.rank)}` : "external";
   return `
     <button class="slot-option" type="button" data-player-option="${escapeHtml(player.name)}">
       <span>${escapeHtml(playerLabel(player))}</span>
-      <em>${player.rank && player.rank < 9999 ? `#${escapeHtml(player.rank)}` : "external"}</em>
+      <em>${meta}</em>
     </button>
   `;
 }
@@ -1170,7 +1173,7 @@ function resolveDrawEntry(entry, slotIndex) {
     return { source: entry, player: null, status: "bye", method: "BYE" };
   }
   if (isQualifier(entry)) {
-    return { source: "qualifiee", player: createQualifierPlayer(slotIndex), status: "qualifier", method: "qualifiee" };
+    return { source: QUALIFIER_LABEL, player: createQualifierPlayer(slotIndex), status: "qualifier", method: QUALIFIER_LABEL };
   }
 
   const player = findPlayerByImportedName(entry);
@@ -1198,9 +1201,8 @@ function cleanOcrLine(line) {
 
   value = stripTrailingOcrMeta(value);
 
-  if (normalizeSearch(value).includes("qualif")) {
-    return "qualifiee";
-  }
+  const qualifierLabel = canonicalQualifierLabel(value);
+  if (qualifierLabel) return qualifierLabel;
 
   return cleanEntryName(value);
 }
@@ -1330,8 +1332,15 @@ function isBye(value) {
 }
 
 function isQualifier(value) {
+  return Boolean(canonicalQualifierLabel(value));
+}
+
+function canonicalQualifierLabel(value) {
   const cleaned = normalizeSearch(stripTrailingOcrMeta(value));
-  return /^(qualifiee|qualifier|qualif[i1]er|qualif[i1]ee|q)$/.test(cleaned);
+  if (!cleaned) return null;
+  if (cleaned === "q") return QUALIFIER_LABEL;
+  if (cleaned.includes("qualif")) return QUALIFIER_LABEL;
+  return null;
 }
 
 function playerLabel(player) {
@@ -1363,7 +1372,7 @@ function createQualifierPlayer(slotIndex) {
   const baseline = qualifierBaseline(selectedTournament());
   return createGenericPlayer({
     name: `Qualifier ${slotIndex + 1}`,
-    displayName: "qualifiee",
+    displayName: QUALIFIER_LABEL,
     ...baseline,
     rankMissing: 0,
     ageMissing: 0,
