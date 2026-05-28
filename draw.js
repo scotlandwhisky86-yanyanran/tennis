@@ -44,6 +44,7 @@ const state = {
   lastTournament: null,
   importImageFile: null,
   importRows: [],
+  ocrPreviewTimer: null,
   tesseractOptions: null,
 };
 
@@ -336,6 +337,7 @@ document.addEventListener("paste", (event) => {
 
 elements.recognizeImage.addEventListener("click", recognizeImportImage);
 elements.matchOcrText.addEventListener("click", () => matchOcrText(true));
+elements.ocrText.addEventListener("input", scheduleOcrPreview);
 elements.applyOcrImport.addEventListener("click", applyOcrImport);
 
 elements.sampleButton.addEventListener("click", () => {
@@ -690,6 +692,7 @@ function loadScriptWithFallback(sources, index = 0) {
 }
 
 async function matchOcrText(showStatus) {
+  clearTimeout(state.ocrPreviewTimer);
   const entries = parseOcrEntries(elements.ocrText.value);
   state.importRows = entries.map((entry) => resolveDrawEntry(entry, 0));
   renderOcrMatches();
@@ -707,6 +710,23 @@ async function matchOcrText(showStatus) {
     elements.ocrStatus.textContent = `Matched ${matched} slot${matched === 1 ? "" : "s"}${missing ? `, ${missing} need review` : ""}.`;
   }
   return state.importRows;
+}
+
+function scheduleOcrPreview() {
+  clearTimeout(state.ocrPreviewTimer);
+  state.ocrPreviewTimer = setTimeout(renderOcrPreviewFromText, 180);
+}
+
+function renderOcrPreviewFromText() {
+  const entries = parseOcrEntries(elements.ocrText.value);
+  state.importRows = entries.map((entry) => resolveDrawEntry(entry, 0));
+  renderOcrMatches();
+
+  const matched = state.importRows.filter((row) => row.player).length;
+  const missing = state.importRows.filter((row) => row.status === "missing").length;
+  elements.ocrStatus.textContent = state.importRows.length
+    ? `Preview updated from edited text: ${matched} matched${missing ? `, ${missing} need lookup` : ""}.`
+    : "No player names found in the edited text.";
 }
 
 function renderOcrMatches() {
@@ -728,7 +748,7 @@ function renderOcrMatches() {
 }
 
 async function applyOcrImport() {
-  const rows = state.importRows.length ? state.importRows : await matchOcrText(false);
+  const rows = await matchOcrText(false);
   if (!rows.length) {
     elements.ocrStatus.textContent = "No matched rows to apply.";
     return;
@@ -897,21 +917,42 @@ function resolveDrawEntry(entry, slotIndex) {
 function cleanOcrLine(line) {
   let value = String(line || "")
     .replace(/[|]/g, " ")
+    .replace(/[«»<>]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 
   value = value
     .replace(/^\d{1,3}\s+/, "")
+    .replace(/^[a-z][.)]\s+/i, "")
     .replace(/^(?:Q|W|WC|LL|PR|SR|SE)\s+/i, "")
     .replace(/\(\d{1,3}\)/g, "")
-    .replace(/\s+[A-Z]{3}\s*$/, "")
     .replace(/\s+\d{1,3}\s*$/, "")
     .trim();
+
+  value = stripTrailingCountryCode(value);
+
+  if (normalizeSearch(value).includes("qualif")) {
+    return "QUALIFIER";
+  }
 
   return cleanEntryName(value);
 }
 
+function stripTrailingCountryCode(value) {
+  const parts = String(value || "").trim().split(/\s+/).filter(Boolean);
+  if (parts.length < 3) return value;
+
+  const last = parts.at(-1);
+  if (/^[A-Za-z]{3}$/.test(last)) {
+    return parts.slice(0, -1).join(" ");
+  }
+  return value;
+}
+
 function isOcrNoise(line) {
+  const compact = String(line || "").toLowerCase().replace(/\s+/g, "");
+  if (/^[a-z]{0,2}\d{1,2}\/\d{1,2}$/.test(compact)) return true;
+
   const value = normalizeSearch(line);
   if (!value) return true;
   if (/^(draw|main|round|section|court|match|winner|seed|ranking)$/.test(value)) return true;
