@@ -1047,7 +1047,7 @@ function renderPickerOptions(query) {
       <em>empty slot</em>
     </button>
     <button class="slot-option is-empty-option" type="button" data-player-option="${QUALIFIER_OPTION}">
-      <span>Qualifier</span>
+      <span>qualifiee</span>
       <em>Q slot</em>
     </button>
     ${matches.length ? matches.map(renderPlayerOption).join("") : `<div class="player-empty">No available players found</div>`}
@@ -1170,7 +1170,7 @@ function resolveDrawEntry(entry, slotIndex) {
     return { source: entry, player: null, status: "bye", method: "BYE" };
   }
   if (isQualifier(entry)) {
-    return { source: entry, player: createQualifierPlayer(slotIndex), status: "qualifier", method: "Qualifier" };
+    return { source: "qualifiee", player: createQualifierPlayer(slotIndex), status: "qualifier", method: "qualifiee" };
   }
 
   const player = findPlayerByImportedName(entry);
@@ -1184,7 +1184,7 @@ function resolveDrawEntry(entry, slotIndex) {
 function cleanOcrLine(line) {
   let value = String(line || "")
     .replace(/[|]/g, " ")
-    .replace(/[＿_]+/g, " ")
+    .replace(/[＿_@]+/g, " ")
     .replace(/[\u00ab\u00bb<>]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -1199,7 +1199,7 @@ function cleanOcrLine(line) {
   value = stripTrailingOcrMeta(value);
 
   if (normalizeSearch(value).includes("qualif")) {
-    return "QUALIFIER";
+    return "qualifiee";
   }
 
   return cleanEntryName(value);
@@ -1235,7 +1235,7 @@ function stripTrailingSeed(value) {
 
 function stripTrailingEntryMark(value) {
   return String(value || "")
-    .replace(/\s*(?:\(|\[)?\s*(?:Q|W|WC|LL|PR|SR|SE)\s*(?:\)|\])?\s*$/i, "")
+    .replace(/\s*(?:\(|\[)?\s*(?:Q|W|WC|LL|PR|SR|SE)\s*(?:\)|\])?\s*[@.]*\s*$/i, "")
     .trim();
 }
 
@@ -1330,7 +1330,8 @@ function isBye(value) {
 }
 
 function isQualifier(value) {
-  return /^(qualifiee|qualifier|qualif[i1]er|qualif[i1]ee|q)$/i.test(String(value || "").trim());
+  const cleaned = normalizeSearch(stripTrailingOcrMeta(value));
+  return /^(qualifiee|qualifier|qualif[i1]er|qualif[i1]ee|q)$/.test(cleaned);
 }
 
 function playerLabel(player) {
@@ -1362,7 +1363,7 @@ function createQualifierPlayer(slotIndex) {
   const baseline = qualifierBaseline(selectedTournament());
   return createGenericPlayer({
     name: `Qualifier ${slotIndex + 1}`,
-    displayName: "Qualifier",
+    displayName: "qualifiee",
     ...baseline,
     rankMissing: 0,
     ageMissing: 0,
