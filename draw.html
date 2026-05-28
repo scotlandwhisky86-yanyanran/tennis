@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WTA Draw Predictor</title>
+    <meta
+      name="description"
+      content="A WTA singles draw predictor using the same current snapshot model as the match predictor."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell shell-wide">
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="nav-link" href="./index.html">Match Predictor</a>
+        <a class="nav-link is-active" href="./draw.html" aria-current="page">Draw Predictor</a>
+      </nav>
+
+      <section class="workspace" aria-labelledby="app-title">
+        <div class="masthead">
+          <div>
+            <p class="eyebrow">WTA singles - bracket forecast</p>
+            <h1 id="app-title">Draw Predictor</h1>
+            <p class="subtle" id="draw-pool-status">Loading player pool</p>
+          </div>
+          <div class="status-pill" id="snapshot-status">Loading data</div>
+        </div>
+
+        <form class="draw-builder" id="draw-form">
+          <div class="draw-toolbar">
+            <div class="filter-grid draw-filter-grid">
+              <div class="field">
+                <label for="surface-filter">Surface filter</label>
+                <select id="surface-filter" name="surface-filter">
+                  <option value="all">All surfaces</option>
+                  <option value="hard">Hard</option>
+                  <option value="clay">Clay</option>
+                  <option value="grass">Grass</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="level-filter">Level filter</label>
+                <select id="level-filter" name="level-filter">
+                  <option value="all">All levels</option>
+                  <option value="grand_slam">Grand Slam</option>
+                  <option value="1000">WTA 1000</option>
+                  <option value="500">WTA 500</option>
+                  <option value="250">WTA 250</option>
+                  <option value="finals">WTA Finals</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <span class="field-label">Draw size</span>
+                <output class="draw-size-display" id="draw-size-display">Auto</output>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="tournament">Tournament</label>
+              <select id="tournament" name="tournament" required>
+                <option value="">Loading tournaments</option>
+              </select>
+            </div>
+
+            <div class="draw-actions">
+              <button class="secondary-action" type="button" id="import-image">Import image</button>
+              <button class="secondary-action" type="button" id="sample-draw">Load sample</button>
+              <button class="secondary-action" type="button" id="clear-draw">Clear</button>
+              <button class="primary-action" type="submit">Submit draw</button>
+            </div>
+          </div>
+
+          <div class="section-tabs" id="section-tabs" aria-label="Draw sections"></div>
+
+          <p class="subtle draw-note" id="draw-note">
+            Click a first-column slot to choose a player. Paste a copied name list into the picker to fill downward from that slot.
+          </p>
+
+          <div class="bracket-shell">
+            <div class="bracket-board" id="bracket-board" aria-live="polite"></div>
+          </div>
+
+          <div class="slot-picker" id="slot-picker" hidden>
+            <div class="slot-picker-head">
+              <strong id="slot-picker-title">Slot</strong>
+              <button type="button" class="icon-action" id="close-picker" aria-label="Close player picker">x</button>
+            </div>
+            <input id="slot-search" type="search" autocomplete="off" placeholder="Search player name" />
+            <p class="picker-hint">Paste multiple names here to fill slots downward. Use BYE or a blank line for empty slots.</p>
+            <div class="slot-options" id="slot-options" role="listbox"></div>
+          </div>
+
+          <div class="import-modal" id="import-modal" hidden>
+            <div class="import-panel">
+              <div class="slot-picker-head">
+                <strong>Import English Draw Image</strong>
+                <button type="button" class="icon-action" id="close-import" aria-label="Close image import">x</button>
+              </div>
+
+              <div class="import-dropzone" id="import-dropzone" tabindex="0">
+                <input id="draw-image-file" type="file" accept="image/*" hidden />
+                <button class="secondary-action" type="button" id="choose-image">Choose image</button>
+                <p class="subtle">Paste, drop, or choose an English draw image.</p>
+              </div>
+
+              <img class="import-preview" id="import-preview" alt="Draw image preview" hidden />
+
+              <div class="import-actions">
+                <button class="primary-action" type="button" id="recognize-image">Recognize image</button>
+                <button class="secondary-action" type="button" id="match-ocr-text">Match names</button>
+              </div>
+
+              <p class="subtle" id="ocr-status">No image selected.</p>
+
+              <div class="field">
+                <label for="ocr-text">Recognized text</label>
+                <textarea id="ocr-text" rows="8" placeholder="OCR text appears here"></textarea>
+              </div>
+
+              <div class="import-apply-row">
+                <div class="field">
+                  <label for="ocr-start-slot">Start slot</label>
+                  <input id="ocr-start-slot" type="number" min="1" value="1" />
+                </div>
+                <button class="primary-action" type="button" id="apply-ocr-import">Apply to draw</button>
+              </div>
+
+              <div class="ocr-match-list" id="ocr-matches"></div>
+            </div>
+          </div>
+        </form>
+
+        <section class="draw-summary" id="draw-summary" hidden></section>
+      </section>
+
+      <section class="details-band">
+        <div>
+          <h2>How To Build</h2>
+          <p>
+            Use the first column only. Empty slots are treated as BYEs when you
+            submit the draw.
+          </p>
+        </div>
+        <div>
+          <h2>Prediction View</h2>
+          <p>
+            After submit, every later column fills with projected winners for the
+            selected tournament and surface.
+          </p>
+        </div>
+        <div>
+          <h2>Current Limit</h2>
+          <p>
+            The picker uses the current top-250 WTA snapshot. Draw sizes now support
+            16, 32, 64, and 128 players.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./draw.js" type="module"></script>
+  </body>
+</html>

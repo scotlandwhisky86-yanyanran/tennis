@@ -1,0 +1,27 @@
+{
+  "selected": "B",
+  "selectionReason": "Accuracy tied with A on the 2024-2025 holdout test; B had slightly better log loss and Brier score.",
+  "accuracyTarget": 0.65,
+  "candidates": {
+    "A": {
+      "trainingYears": "2010-2022",
+      "validationYears": "2023",
+      "testYears": "2024-2025",
+      "selectedC": 10.0,
+      "accuracy": 0.6634991615427613,
+      "logLoss": 0.6156428573731275,
+      "brier": 0.21387347226688752,
+      "auc": 0.7179589823974559
+    },
+    "B": {
+      "trainingYears": "2010-2020",
+      "validationYears": "2021-2023",
+      "testYears": "2024-2025",
+      "selectedC": 0.03,
+      "accuracy": 0.6634991615427613,
+      "logLoss": 0.6156361075883213,
+      "brier": 0.2138664593753016,
+      "auc": 0.7179258573146433
+    }
+  }
+}

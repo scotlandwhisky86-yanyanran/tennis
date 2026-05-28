@@ -1,0 +1,121 @@
+{
+  "createdAt": "2026-05-27",
+  "split": {
+    "tuneTrainYears": "2010-2021",
+    "tuneTrainRows": 16818,
+    "validationYears": "2022-2023",
+    "validationRows": 2966,
+    "fitForTestYears": "2010-2023",
+    "fitForTestRows": 19784,
+    "testYears": "2024-2025",
+    "testRows": 3551
+  },
+  "features": {
+    "baseFeatureCount": 54,
+    "interactionCount": 16,
+    "interactionNames": [
+      "serveOnGrass",
+      "firstServeOnGrass",
+      "secondServeOnGrass",
+      "aceOnGrass",
+      "heightOnGrass",
+      "returnOnClay",
+      "breakConvertOnClay",
+      "surfaceEloOnClay",
+      "surfaceEloOnGrass",
+      "surfaceEloOnHard",
+      "h2hWeighted",
+      "surfaceH2hWeighted",
+      "recent10WithSample",
+      "surfaceRecentWithSample",
+      "workload30ByRecent30",
+      "top20Weighted"
+    ]
+  },
+  "selected": "logistic_interactions",
+  "selectedParams": {
+    "c": 0.1,
+    "interactions": true
+  },
+  "candidates": [
+    {
+      "name": "logistic_interactions",
+      "kind": "logistic",
+      "params": {
+        "c": 0.1,
+        "interactions": true
+      },
+      "validation": {
+        "rows": 2966,
+        "accuracy": 0.6655428186109238,
+        "logLoss": 0.6086200990827446,
+        "brier": 0.21121870053114636,
+        "auc": 0.7256609884165883
+      },
+      "test": {
+        "rows": 3551,
+        "accuracy": 0.6553083638411715,
+        "logLoss": 0.6153643833834911,
+        "brier": 0.21372165443904545,
+        "auc": 0.719401611777397
+      }
+    },
+    {
+      "name": "hist_gradient_boosting",
+      "kind": "hgb",
+      "params": {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 63,
+        "l2_regularization": 0.0,
+        "max_iter": 350,
+        "min_samples_leaf": 20
+      },
+      "validation": {
+        "rows": 2966,
+        "accuracy": 0.6695886716115981,
+        "logLoss": 0.6114461251223673,
+        "brier": 0.21193171876638262,
+        "auc": 0.7242449500771454
+      },
+      "test": {
+        "rows": 3551,
+        "accuracy": 0.6431990988453956,
+        "logLoss": 0.6228436342862337,
+        "brier": 0.21707012680920465,
+        "auc": 0.7108017640713244
+      }
+    },
+    {
+      "name": "ensemble",
+      "kind": "ensemble",
+      "params": {
+        "hgbWeight": 1.0,
+        "logistic": {
+          "c": 0.1,
+          "interactions": true
+        },
+        "hgb": {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 63,
+          "l2_regularization": 0.0,
+          "max_iter": 350,
+          "min_samples_leaf": 20
+        }
+      },
+      "validation": {
+        "rows": 2966,
+        "accuracy": 0.6695886716115981,
+        "logLoss": 0.6114461251223673,
+        "brier": 0.21193171876638262,
+        "auc": 0.7242449500771454
+      },
+      "test": {
+        "rows": 3551,
+        "accuracy": 0.6431990988453956,
+        "logLoss": 0.6228436342862337,
+        "brier": 0.21707012680920465,
+        "auc": 0.7108017640713244
+      }
+    }
+  ]
+}

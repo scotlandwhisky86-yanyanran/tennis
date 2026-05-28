@@ -1,0 +1,407 @@
+{
+  "name": "wta-logistic-detailed-v0",
+  "version": "0.1.0",
+  "trainedAt": "2026-05-27",
+  "trainingStatus": "trained",
+  "algorithm": "sklearn LogisticRegression",
+  "regularization": {
+    "penalty": "l2",
+    "c": 0.003
+  },
+  "featureSet": "detailed",
+  "trainingRows": 19784,
+  "intercept": -0.02362826248409827,
+  "coefficients": {
+    "rankAdvantage": 0.19441766794900261,
+    "rankPointsAdvantage": 0.13822529347816795,
+    "overallEloAdvantage": 0.16582908570983979,
+    "hardEloAdvantage": 0.10105039794071587,
+    "clayEloAdvantage": 0.0005478584616059548,
+    "grassEloAdvantage": 0.005876789452054188,
+    "matchSurfaceEloAdvantage": 0.12861931284332934,
+    "ageAdvantage": 0.018960497248752848,
+    "heightAdvantage": 0.02776748500131232,
+    "leftyAdvantage": 0.011365396587778987,
+    "sameHandedness": 0.01348824476107457,
+    "overallWinRateAdvantage": -0.023508876151326696,
+    "overallSampleAdvantage": -0.027837640120938197,
+    "surfaceWinRateAdvantage": 0.04714789369387745,
+    "surfaceSampleAdvantage": -0.015193790159246708,
+    "recent5WinRateAdvantage": -0.027561029212511627,
+    "recent10WinRateAdvantage": 0.01535217498818579,
+    "recent20WinRateAdvantage": 0.0061993140126596815,
+    "recentSurface10WinRateAdvantage": -0.012719735000246597,
+    "matchesLast30Advantage": 0.10978846623117433,
+    "matchesLast60Advantage": 0.016890925350472367,
+    "matchesLast90Advantage": 0.10302981984521391,
+    "winRateLast30Advantage": -0.009032224074307258,
+    "winRateLast60Advantage": 0.036554753731579584,
+    "winRateLast90Advantage": 0.029558145706397806,
+    "h2hAdvantage": 0.045006741570678216,
+    "h2hSampleSize": 0.005376432426456721,
+    "surfaceH2hAdvantage": -0.008827572744361512,
+    "surfaceH2hSampleSize": -0.00036833387736100463,
+    "highLevelExperienceAdvantage": -0.02783764012093851,
+    "top20WinRateAdvantage": -0.04639883118920277,
+    "top20SampleAdvantage": 0.06633935131228136,
+    "aceRateAdvantage": 0.017617258361161504,
+    "doubleFaultRateAdvantage": 0.00041414347789577147,
+    "firstServeInRateAdvantage": -0.0018918627109414546,
+    "firstServeWonRateAdvantage": 0.11824780853203047,
+    "secondServeWonRateAdvantage": 0.07162509060581186,
+    "servicePointWonRateAdvantage": 0.024565579578958247,
+    "returnPointWonRateAdvantage": 0.16086517148625715,
+    "breakPointSaveRateAdvantage": -0.0014221854581772946,
+    "breakPointConvertRateAdvantage": -0.02725144778503386,
+    "tiebreakWinRateAdvantage": -0.011276090130051292,
+    "styleServeSampleAdvantage": -0.043792067359906324,
+    "styleReturnSampleAdvantage": -0.02821496191821249,
+    "tiebreakSampleAdvantage": -0.03400270031634908,
+    "rankMissingAdvantage": -0.02195092274703155,
+    "rankPointsMissingAdvantage": -0.02195092274703155,
+    "ageMissingAdvantage": 0.0,
+    "heightMissingAdvantage": 0.05192548540321244,
+    "surfaceHard": -0.00798757731785028,
+    "surfaceClay": 0.004141489771729044,
+    "surfaceGrass": 0.006310790434467557,
+    "drawSize": -0.050586815303217576,
+    "tournamentLevel": 0.029518602359480325
+  },
+  "featureStats": {
+    "rankAdvantage": {
+      "mean": 0.670845127375657,
+      "std": 117.33828650856347
+    },
+    "rankPointsAdvantage": {
+      "mean": 16.61423372422159,
+      "std": 2530.041170294303
+    },
+    "overallEloAdvantage": {
+      "mean": 0.7910712498066511,
+      "std": 158.1310334415989
+    },
+    "hardEloAdvantage": {
+      "mean": 1.1816651231638868,
+      "std": 146.34595261488596
+    },
+    "clayEloAdvantage": {
+      "mean": -0.8700712687387934,
+      "std": 105.27286009410686
+    },
+    "grassEloAdvantage": {
+      "mean": 0.4116908205216234,
+      "std": 75.70030304871077
+    },
+    "matchSurfaceEloAdvantage": {
+      "mean": 0.503381631989212,
+      "std": 127.28799769376107
+    },
+    "ageAdvantage": {
+      "mean": -0.017256368782854817,
+      "std": 3.4202298953705785
+    },
+    "heightAdvantage": {
+      "mean": 0.06560857258390619,
+      "std": 9.029422522588336
+    },
+    "leftyAdvantage": {
+      "mean": 0.001819652244237768,
+      "std": 0.4149168706245061
+    },
+    "sameHandedness": {
+      "mean": 0.8278406793368378,
+      "std": 0.37751885909440697
+    },
+    "overallWinRateAdvantage": {
+      "mean": 0.0009956852289590267,
+      "std": 0.1666340058943466
+    },
+    "overallSampleAdvantage": {
+      "mean": -0.6222705216336434,
+      "std": 141.3143322840124
+    },
+    "surfaceWinRateAdvantage": {
+      "mean": 0.0006143464201126425,
+      "std": 0.16222285730627334
+    },
+    "surfaceSampleAdvantage": {
+      "mean": -0.27016781237363524,
+      "std": 79.1568714571263
+    },
+    "recent5WinRateAdvantage": {
+      "mean": 0.0012767652552326974,
+      "std": 0.14989527960711685
+    },
+    "recent10WinRateAdvantage": {
+      "mean": 0.0015949642642930088,
+      "std": 0.16533658862927833
+    },
+    "recent20WinRateAdvantage": {
+      "mean": 0.0015674796807689593,
+      "std": 0.17211571955237184
+    },
+    "recentSurface10WinRateAdvantage": {
+      "mean": 0.0006089111275120185,
+      "std": 0.15822494993885058
+    },
+    "matchesLast30Advantage": {
+      "mean": 0.00227456530529721,
+      "std": 3.0003613615473874
+    },
+    "matchesLast60Advantage": {
+      "mean": -0.010816821674080065,
+      "std": 4.855669005618338
+    },
+    "matchesLast90Advantage": {
+      "mean": -0.035078851597250306,
+      "std": 6.42479454938992
+    },
+    "winRateLast30Advantage": {
+      "mean": 0.00028716778690019383,
+      "std": 0.1274853772489162
+    },
+    "winRateLast60Advantage": {
+      "mean": 0.00022412311978164636,
+      "std": 0.15174877631162778
+    },
+    "winRateLast90Advantage": {
+      "mean": -0.0005537740408328091,
+      "std": 0.16076632139132632
+    },
+    "h2hAdvantage": {
+      "mean": -0.0013591511493113513,
+      "std": 0.5442741155963912
+    },
+    "h2hSampleSize": {
+      "mean": 0.8643348160129397,
+      "std": 1.4858116311648597
+    },
+    "surfaceH2hAdvantage": {
+      "mean": 0.002809994404211955,
+      "std": 0.4584096825093884
+    },
+    "surfaceH2hSampleSize": {
+      "mean": 0.4553174282248281,
+      "std": 0.9870394606159147
+    },
+    "highLevelExperienceAdvantage": {
+      "mean": -0.6222705216336434,
+      "std": 141.3143322840124
+    },
+    "top20WinRateAdvantage": {
+      "mean": 0.0006101773255566084,
+      "std": 0.1707421209727562
+    },
+    "top20SampleAdvantage": {
+      "mean": -0.1302567731500202,
+      "std": 48.95777254052523
+    },
+    "aceRateAdvantage": {
+      "mean": -0.00019388007950977976,
+      "std": 0.029026394230399485
+    },
+    "doubleFaultRateAdvantage": {
+      "mean": 0.00021201063552743658,
+      "std": 0.023110727058331205
+    },
+    "firstServeInRateAdvantage": {
+      "mean": 0.0010917584957480318,
+      "std": 0.06323723278073769
+    },
+    "firstServeWonRateAdvantage": {
+      "mean": -0.0002939507959334052,
+      "std": 0.05475561192004404
+    },
+    "secondServeWonRateAdvantage": {
+      "mean": -0.0001852472586587856,
+      "std": 0.035338955956119834
+    },
+    "servicePointWonRateAdvantage": {
+      "mean": -0.00010072247028258734,
+      "std": 0.03812764714766819
+    },
+    "returnPointWonRateAdvantage": {
+      "mean": 0.00014513474038604855,
+      "std": 0.033479484858161095
+    },
+    "breakPointSaveRateAdvantage": {
+      "mean": -9.842524293497283e-05,
+      "std": 0.056019712801537266
+    },
+    "breakPointConvertRateAdvantage": {
+      "mean": -0.00020420998473540773,
+      "std": 0.04963416434509734
+    },
+    "tiebreakWinRateAdvantage": {
+      "mean": 0.0006266273883247332,
+      "std": 0.13586615029182336
+    },
+    "styleServeSampleAdvantage": {
+      "mean": -46.50631823695916,
+      "std": 9180.409489391197
+    },
+    "styleReturnSampleAdvantage": {
+      "mean": -43.954761423372425,
+      "std": 9331.24478458841
+    },
+    "tiebreakSampleAdvantage": {
+      "mean": -0.22659725030327538,
+      "std": 33.70785559986071
+    },
+    "rankMissingAdvantage": {
+      "mean": 0.0005054589567327133,
+      "std": 0.05948072972293101
+    },
+    "rankPointsMissingAdvantage": {
+      "mean": 0.0005054589567327133,
+      "std": 0.05948072972293101
+    },
+    "ageMissingAdvantage": {
+      "mean": 0.0,
+      "std": 1.0
+    },
+    "heightMissingAdvantage": {
+      "mean": 0.002426202992317024,
+      "std": 0.2292637019661848
+    },
+    "surfaceHard": {
+      "mean": 0.6449656287909422,
+      "std": 0.478523736578683
+    },
+    "surfaceClay": {
+      "mean": 0.23175293166194905,
+      "std": 0.42195202372797724
+    },
+    "surfaceGrass": {
+      "mean": 0.12328143954710878,
+      "std": 0.3287599826778478
+    },
+    "drawSize": {
+      "mean": 84.37788111605337,
+      "std": 39.64342748222729
+    },
+    "tournamentLevel": {
+      "mean": 0.25384957541443076,
+      "std": 0.054617932005754835
+    }
+  },
+  "evaluation": {
+    "split": {
+      "tuningTrainYears": "2010-2021",
+      "tuningTrainRows": 16818,
+      "validationYears": "2022-2023",
+      "validationRows": 2966,
+      "fitForTestYears": "2010-2023",
+      "fitForTestRows": 19784,
+      "testYears": "2024-2025",
+      "testRows": 3551
+    },
+    "selectedC": 0.003,
+    "validationGrid": [
+      {
+        "rows": 2966,
+        "accuracy": 0.6574511126095752,
+        "logLoss": 0.6066042440682033,
+        "brier": 0.21025338266481208,
+        "auc": 0.7286390343655316,
+        "c": 0.003
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.6598111935266352,
+        "logLoss": 0.6070906930302434,
+        "brier": 0.21047932814101847,
+        "auc": 0.7280465173596569,
+        "c": 0.01
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.6614969656102495,
+        "logLoss": 0.6073552200743781,
+        "brier": 0.21061505364056263,
+        "auc": 0.7275717761822715,
+        "c": 0.03
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.6614969656102495,
+        "logLoss": 0.6075962844349655,
+        "brier": 0.2107445242856383,
+        "auc": 0.7269515204677566,
+        "c": 0.1
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.6591368846931894,
+        "logLoss": 0.6076849860357502,
+        "brier": 0.2107854250428734,
+        "auc": 0.7268105532599121,
+        "c": 0.3
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.6618341200269724,
+        "logLoss": 0.6076013625636041,
+        "brier": 0.2107172519351104,
+        "auc": 0.7271311399745259,
+        "c": 1.0
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.660485502360081,
+        "logLoss": 0.6077898140602473,
+        "brier": 0.21078111449122172,
+        "auc": 0.7270156378106793,
+        "c": 3.0
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.6611598111935266,
+        "logLoss": 0.6078190562807697,
+        "brier": 0.2107774512694763,
+        "auc": 0.7270788456877448,
+        "c": 10.0
+      },
+      {
+        "rows": 2966,
+        "accuracy": 0.6614969656102495,
+        "logLoss": 0.607853383607327,
+        "brier": 0.2107920661097382,
+        "auc": 0.7270451954510336,
+        "c": 30.0
+      }
+    ],
+    "test": {
+      "rows": 3551,
+      "accuracy": 0.656998028724303,
+      "logLoss": 0.6133241234461263,
+      "brier": 0.21287195000972228,
+      "auc": 0.7213731835776382
+    },
+    "baselines": {
+      "overallElo": {
+        "rows": 3551,
+        "accuracy": 0.6488313151225007,
+        "logLoss": 0.6189052950711973,
+        "brier": 0.21558918381646816,
+        "auc": 0.7124132241893522
+      },
+      "matchSurfaceElo": {
+        "rows": 3551,
+        "accuracy": 0.6310898338496198,
+        "logLoss": 0.6330760367400099,
+        "brier": 0.22193302127559783,
+        "auc": 0.6886725046005457
+      },
+      "ranking": {
+        "rows": 3551,
+        "accuracy": 0.6291185581526331,
+        "logLoss": 0.6603730702662071,
+        "brier": 0.23376443255421012,
+        "auc": 0.6292461450599658
+      }
+    },
+    "passesAccuracyTarget": true,
+    "accuracyTarget": 0.65
+  }
+}

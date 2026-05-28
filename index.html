@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WTA Match Predictor</title>
+    <meta
+      name="description"
+      content="A WTA singles match predictor using a logistic model and current player snapshots."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="./index.html" aria-current="page">Match Predictor</a>
+        <a class="nav-link" href="./draw.html">Draw Predictor</a>
+      </nav>
+
+      <section class="workspace" aria-labelledby="app-title">
+        <div class="masthead">
+          <div>
+            <p class="eyebrow">WTA singles - current snapshot model</p>
+            <h1 id="app-title">Match Predictor</h1>
+            <p class="subtle" id="player-pool-status">Loading player pool</p>
+          </div>
+          <div class="status-pill" id="snapshot-status">Loading data</div>
+        </div>
+
+        <div class="prediction-layout">
+          <form class="control-panel" id="predict-form">
+            <div class="filter-grid">
+              <div class="field">
+                <label for="surface-filter">Surface filter</label>
+                <select id="surface-filter" name="surface-filter">
+                  <option value="all">All surfaces</option>
+                  <option value="hard">Hard</option>
+                  <option value="clay">Clay</option>
+                  <option value="grass">Grass</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="level-filter">Level filter</label>
+                <select id="level-filter" name="level-filter">
+                  <option value="all">All levels</option>
+                  <option value="grand_slam">Grand Slam</option>
+                  <option value="1000">WTA 1000</option>
+                  <option value="500">WTA 500</option>
+                  <option value="250">WTA 250</option>
+                  <option value="finals">WTA Finals</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="tournament">Tournament</label>
+              <select id="tournament" name="tournament" required>
+                <option value="">Loading tournaments</option>
+              </select>
+            </div>
+
+            <div class="versus-grid">
+              <div class="field">
+                <label for="player-a">Player A</label>
+                <div class="player-combobox">
+                  <input
+                    id="player-a"
+                    name="player-a"
+                    autocomplete="off"
+                    aria-controls="player-a-menu"
+                    aria-expanded="false"
+                    placeholder="Iga Swiatek"
+                    required
+                  />
+                  <div class="player-menu" id="player-a-menu" role="listbox" hidden></div>
+                </div>
+              </div>
+
+              <div class="vs-mark" aria-hidden="true">vs</div>
+
+              <div class="field">
+                <label for="player-b">Player B</label>
+                <div class="player-combobox">
+                  <input
+                    id="player-b"
+                    name="player-b"
+                    autocomplete="off"
+                    aria-controls="player-b-menu"
+                    aria-expanded="false"
+                    placeholder="Aryna Sabalenka"
+                    required
+                  />
+                  <div class="player-menu" id="player-b-menu" role="listbox" hidden></div>
+                </div>
+              </div>
+            </div>
+
+            <datalist id="players-list"></datalist>
+
+            <button class="primary-action" type="submit">Predict match</button>
+          </form>
+
+          <section class="result-panel" id="result-panel" aria-live="polite">
+            <div class="empty-state">
+              <div class="court-lines" aria-hidden="true"></div>
+              <p>Search any two players from the current WTA snapshot.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="details-band">
+        <div>
+          <h2>Model Inputs</h2>
+          <p>
+            The first version combines ranking, overall Elo, surface Elo, recent form,
+            age, and current head-to-head into a logistic win probability.
+          </p>
+        </div>
+        <div>
+          <h2>Data Rule</h2>
+          <p>
+            Training uses historical WTA results. Prediction uses a public-data
+            player snapshot that must be refreshed within 15 days.
+          </p>
+        </div>
+        <div>
+          <h2>Scope</h2>
+          <p>
+            WTA singles main draw only. This is an analytical game for friends, not
+            betting advice.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

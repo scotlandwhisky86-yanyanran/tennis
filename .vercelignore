@@ -1,0 +1,12 @@
+data/training_rows*.csv
+data/*evaluation*.json
+data/*comparison*.json
+data/advanced_model_artifact.pkl
+data/model_a.json
+data/model_b.json
+data/model_detailed.json
+data/model_surface_record.json
+data/model_level_record.json
+data/model_split*_report.json
+__pycache__/
+*.pyc

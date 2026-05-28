@@ -1,0 +1,52 @@
+name: Refresh WTA Snapshot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 2 * * 1,4"
+
+concurrency:
+  group: refresh-wta-snapshot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh public tennis snapshot
+        run: python scripts/refresh_snapshot.py
+
+      - name: Validate snapshot
+        run: python scripts/validate_snapshot.py
+
+      - name: Summarize snapshot
+        run: |
+          python - <<'PY'
+          import json
+          snapshot = json.load(open("data/snapshot.json", encoding="utf-8"))
+          meta = snapshot["meta"]
+          print(f"Snapshot source date: {meta['updatedAt']}")
+          print(f"Generated at: {meta.get('generatedAt')}")
+          print(f"Players: {len(snapshot['players'])}")
+          PY
+
+      - name: Commit refreshed snapshot
+        run: |
+          if git diff --quiet data/snapshot.json; then
+            echo "No snapshot changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snapshot.json
+          git commit -m "Refresh WTA public data snapshot [skip ci]"
+          git push

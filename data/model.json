@@ -1,0 +1,136 @@
+{
+  "name": "wta-logistic-level-record-v2",
+  "version": "0.5.0",
+  "trainedAt": "2026-05-27",
+  "trainingStatus": "trained",
+  "algorithm": "sklearn LogisticRegression with symmetric web inference",
+  "regularization": {
+    "penalty": "l2",
+    "c": 10.0
+  },
+  "trainingRows": 21581,
+  "intercept": -0.014572972915197095,
+  "coefficients": {
+    "rankAdvantage": 0.21014046890206642,
+    "eloAdvantage": 0.617023255819292,
+    "surfaceEloAdvantage": 0.08933118775307511,
+    "surfaceWinRateAdvantage": 0.09333326066094062,
+    "surfaceMatchSampleAdvantage": 0.0032207391572847653,
+    "levelWinRateAdvantage": 0.03156407916455952,
+    "levelMatchSampleAdvantage": 0.023020236035607253,
+    "recentFormAdvantage": 0.05020793692554112,
+    "recentSampleAdvantage": 0.20775283306659925,
+    "h2hAdvantage": 0.0388730604835669,
+    "h2hSampleSize": -0.004337729619072051,
+    "ageAdvantage": 0.017278730722940942,
+    "experienceAdvantage": -0.1609630044861868,
+    "rankMissingAdvantage": -0.038699980904774826,
+    "ageMissingAdvantage": 0.03556602021147915,
+    "tournamentLevel": -0.011453523111394286
+  },
+  "featureStats": {
+    "rankAdvantage": {
+      "mean": 0.1290487002455864,
+      "std": 119.04796760296907
+    },
+    "eloAdvantage": {
+      "mean": -0.26239741526078675,
+      "std": 156.99739272733953
+    },
+    "surfaceEloAdvantage": {
+      "mean": -0.6949345005368552,
+      "std": 126.94209883811963
+    },
+    "surfaceWinRateAdvantage": {
+      "mean": -0.000316930953048389,
+      "std": 0.16054872782504578
+    },
+    "surfaceMatchSampleAdvantage": {
+      "mean": -0.2726472359946249,
+      "std": 81.85720889371393
+    },
+    "levelWinRateAdvantage": {
+      "mean": 0.0002218251277454661,
+      "std": 0.16379783220730945
+    },
+    "levelMatchSampleAdvantage": {
+      "mean": -0.3492423891385941,
+      "std": 52.140188588326396
+    },
+    "recentFormAdvantage": {
+      "mean": -0.000647690225327971,
+      "std": 0.1639337584361909
+    },
+    "recentSampleAdvantage": {
+      "mean": 0.007135906584495621,
+      "std": 2.599263324208017
+    },
+    "h2hAdvantage": {
+      "mean": 0.002605690973999697,
+      "std": 0.5445838590179828
+    },
+    "h2hSampleSize": {
+      "mean": 0.8768361058338353,
+      "std": 1.5122046522869137
+    },
+    "ageAdvantage": {
+      "mean": -0.03191696399610752,
+      "std": 3.4384501477717224
+    },
+    "experienceAdvantage": {
+      "mean": -0.8947685464065613,
+      "std": 146.50037556204666
+    },
+    "rankMissingAdvantage": {
+      "mean": -9.267411148695612e-05,
+      "std": 0.058557096380595884
+    },
+    "ageMissingAdvantage": {
+      "mean": 4.633705574347806e-05,
+      "std": 0.006806974997804936
+    },
+    "tournamentLevel": {
+      "mean": 0.25347574255126815,
+      "std": 0.05440146351204176
+    }
+  },
+  "levelWeights": {
+    "250": 0.1,
+    "500": 0.18,
+    "1000": 0.24,
+    "grand_slam": 0.32,
+    "finals": 0.28
+  },
+  "evaluation": {
+    "split": {
+      "trainForTuningYears": "2010-2022",
+      "validationYears": "2023-2024",
+      "selectedC": 10.0,
+      "finalTrainYears": "2010-2024",
+      "finalTrainRows": 21581,
+      "testYears": "2025",
+      "testRows": 1780
+    },
+    "test": {
+      "rows": 1780,
+      "accuracy": 0.6668539325842696,
+      "logLoss": 0.6155222365090325,
+      "brier": 0.21318647669785656,
+      "auc": 0.7216892339740555
+    },
+    "inferenceLogic": "current web logic: symmetric A/B averaging and 10-match-capped recent sample"
+  },
+  "featureNotes": {
+    "addedIn030": [
+      "surfaceWinRateAdvantage: smoothed pre-match win-rate difference on the tournament surface",
+      "surfaceMatchSampleAdvantage: pre-match same-surface match sample difference"
+    ],
+    "addedIn040": [
+      "levelWinRateAdvantage: smoothed pre-match win-rate difference at the tournament level",
+      "levelMatchSampleAdvantage: pre-match same-level match sample difference"
+    ],
+    "replacementDecision": "Promoted because 2024-2025 holdout accuracy improved vs v0.3.0; logLoss/Brier/AUC were slightly lower, so this is an accuracy-prioritized upgrade."
+  },
+  "trainingYears": "2010-2024",
+  "holdoutYears": "2025"
+}

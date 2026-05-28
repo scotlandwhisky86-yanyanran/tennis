@@ -1,0 +1,177 @@
+{
+  "name": "wta-logistic-v0",
+  "version": "0.2.0",
+  "trainedAt": "2026-05-26",
+  "trainingStatus": "trained",
+  "algorithm": "sklearn LogisticRegression",
+  "regularization": {
+    "penalty": "l2",
+    "c": 10.0
+  },
+  "trainingRows": 23361,
+  "intercept": -0.014568181693739463,
+  "coefficients": {
+    "rankAdvantage": 0.19790049327692047,
+    "eloAdvantage": 0.6348644769630694,
+    "surfaceEloAdvantage": 0.1790799983348626,
+    "recentFormAdvantage": 0.05629530275469597,
+    "recentSampleAdvantage": 0.19716042719705665,
+    "h2hAdvantage": 0.03577064460171193,
+    "h2hSampleSize": -0.0071708438997362565,
+    "ageAdvantage": 0.005066853915028946,
+    "experienceAdvantage": -0.1310843117749969,
+    "rankMissingAdvantage": -0.04385068993322855,
+    "ageMissingAdvantage": 0.029423608702905838,
+    "tournamentLevel": -0.008051329506084969
+  },
+  "featureStats": {
+    "rankAdvantage": {
+      "mean": -0.08462822653139848,
+      "std": 121.55399934451187
+    },
+    "eloAdvantage": {
+      "mean": -0.13277689436275378,
+      "std": 157.98859225866744
+    },
+    "surfaceEloAdvantage": {
+      "mean": -0.5827912730604888,
+      "std": 127.63099602387297
+    },
+    "recentFormAdvantage": {
+      "mean": -0.00015656201928194652,
+      "std": 0.16302759676540668
+    },
+    "recentSampleAdvantage": {
+      "mean": 0.0043662514447155515,
+      "std": 2.567387697144387
+    },
+    "h2hAdvantage": {
+      "mean": 0.0027186721688870815,
+      "std": 0.5449588719520326
+    },
+    "h2hSampleSize": {
+      "mean": 0.8953383844869655,
+      "std": 1.5431676773643654
+    },
+    "ageAdvantage": {
+      "mean": -0.03746843028979906,
+      "std": 3.4450079639541418
+    },
+    "experienceAdvantage": {
+      "mean": -0.6569924232695518,
+      "std": 149.65311523101383
+    },
+    "rankMissingAdvantage": {
+      "mean": -0.0001284191601386927,
+      "std": 0.05888379091282446
+    },
+    "ageMissingAdvantage": {
+      "mean": 4.280638671289757e-05,
+      "std": 0.006542518958792607
+    },
+    "tournamentLevel": {
+      "mean": 0.2531175891442451,
+      "std": 0.054182162890635585
+    }
+  },
+  "levelWeights": {
+    "250": 0.1,
+    "500": 0.18,
+    "1000": 0.24,
+    "grand_slam": 0.32,
+    "finals": 0.28
+  },
+  "evaluation": {
+    "split": {
+      "tuningTrainYears": "2010-2022",
+      "tuningTrainRows": 18222,
+      "validationYears": "2023-2023",
+      "validationRows": 1561,
+      "testYears": "2024-2025",
+      "testRows": 3578
+    },
+    "selectedC": 10.0,
+    "validationGrid": [
+      {
+        "rows": 1561,
+        "accuracy": 0.680973734785394,
+        "logLoss": 0.6001280736597482,
+        "brier": 0.20723796219734344,
+        "auc": 0.7378527919615152,
+        "c": 0.03
+      },
+      {
+        "rows": 1561,
+        "accuracy": 0.6803331197950032,
+        "logLoss": 0.6000835526638139,
+        "brier": 0.20722951211611035,
+        "auc": 0.7377280115586058,
+        "c": 0.1
+      },
+      {
+        "rows": 1561,
+        "accuracy": 0.6803331197950032,
+        "logLoss": 0.6000721692050476,
+        "brier": 0.20722777676799867,
+        "auc": 0.7377789088282135,
+        "c": 0.3
+      },
+      {
+        "rows": 1561,
+        "accuracy": 0.6803331197950032,
+        "logLoss": 0.6000683456820359,
+        "brier": 0.20722725001861303,
+        "auc": 0.7378347316400414,
+        "c": 1.0
+      },
+      {
+        "rows": 1561,
+        "accuracy": 0.6803331197950032,
+        "logLoss": 0.600067269210284,
+        "brier": 0.2072271074977003,
+        "auc": 0.737819955013381,
+        "c": 3.0
+      },
+      {
+        "rows": 1561,
+        "accuracy": 0.6803331197950032,
+        "logLoss": 0.6000668941454711,
+        "brier": 0.20722705846413778,
+        "auc": 0.7378183131659743,
+        "c": 10.0
+      }
+    ],
+    "test": {
+      "rows": 3578,
+      "accuracy": 0.6634991615427613,
+      "logLoss": 0.6156428573731275,
+      "brier": 0.21387347226688752,
+      "auc": 0.7179589823974559
+    },
+    "baselines": {
+      "overallElo": {
+        "rows": 3578,
+        "accuracy": 0.6481274455002795,
+        "logLoss": 0.6196250969996902,
+        "brier": 0.21585789797242072,
+        "auc": 0.7113470908677272
+      },
+      "surfaceElo": {
+        "rows": 3578,
+        "accuracy": 0.6299608719955282,
+        "logLoss": 0.6336331555985463,
+        "brier": 0.2221433744113146,
+        "auc": 0.6879721886804717
+      },
+      "ranking": {
+        "rows": 3578,
+        "accuracy": 0.6294019005030743,
+        "logLoss": 0.660197670241882,
+        "brier": 0.2336794298490777,
+        "auc": 0.6292112605281512
+      }
+    },
+    "passesAccuracyTarget": true,
+    "accuracyTarget": 0.65
+  }
+}
