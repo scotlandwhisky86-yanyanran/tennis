@@ -16,6 +16,12 @@ const SECTION_COLUMNS = [42, 250, 456, 662, 868];
 const FINAL_COLUMNS = [72, 306, 540, 774];
 const QUALIFIER_OPTION = "__qualifier__";
 const DRAW_STORAGE_KEY = "wtaPredictor.drawState.v1";
+const COUNTRY_CODES = new Set([
+  "ARG", "ARM", "AUS", "AUT", "BEL", "BIH", "BLR", "BRA", "BUL", "CAN", "CHN", "COL", "CRO", "CZE", "DEN",
+  "EGY", "ESP", "EST", "FRA", "GBR", "GEO", "GER", "GRE", "HUN", "INA", "ITA", "JPN", "KAZ", "LAT", "MEX",
+  "NED", "NZL", "PHI", "POL", "POR", "ROU", "RSA", "RUS", "SRB", "SLO", "SUI", "SVK", "TPE", "TUN", "TUR",
+  "UKR", "URU", "USA",
+]);
 const TESSERACT_SOURCES = [
   {
     script: "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js",
@@ -1058,6 +1064,7 @@ function resolveDrawEntry(entry, slotIndex) {
 function cleanOcrLine(line) {
   let value = String(line || "")
     .replace(/[|]/g, " ")
+    .replace(/[＿_]+/g, " ")
     .replace(/[\u00ab\u00bb<>]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -1068,9 +1075,7 @@ function cleanOcrLine(line) {
     .replace(/^(?:Q|W|WC|LL|PR|SR|SE)\s+/i, "")
     .trim();
 
-  value = stripTrailingSeed(value);
-  value = stripTrailingCountryCode(value);
-  value = stripTrailingSeed(value);
+  value = stripTrailingOcrMeta(value);
 
   if (normalizeSearch(value).includes("qualif")) {
     return "QUALIFIER";
@@ -1079,9 +1084,37 @@ function cleanOcrLine(line) {
   return cleanEntryName(value);
 }
 
+function stripTrailingOcrMeta(value) {
+  let current = String(value || "").trim();
+  let previous = "";
+
+  while (current && current !== previous) {
+    previous = current;
+    current = stripTrailingDrawMarkers(current);
+    current = stripTrailingSeed(current);
+    current = stripTrailingEntryMark(current);
+    current = stripTrailingCountryCode(current);
+    current = stripTrailingDrawMarkers(current);
+  }
+
+  return current.trim();
+}
+
+function stripTrailingDrawMarkers(value) {
+  return String(value || "")
+    .replace(/\s*(?:[-\u2013\u2014]{2,}|[-\u2013\u2014]+\s*[-\u2013\u2014]+|\.{2,}|\u2026)\s*$/, "")
+    .trim();
+}
+
 function stripTrailingSeed(value) {
   return String(value || "")
     .replace(/\s*(?:\(|\[)?\d{1,3}(?:\)|\])?\s*$/, "")
+    .trim();
+}
+
+function stripTrailingEntryMark(value) {
+  return String(value || "")
+    .replace(/\s*(?:\(|\[)?\s*(?:Q|W|WC|LL|PR|SR|SE)\s*(?:\)|\])?\s*$/i, "")
     .trim();
 }
 
@@ -1102,6 +1135,8 @@ function isOcrNoise(line) {
 
   const value = normalizeSearch(line);
   if (!value) return true;
+  if (COUNTRY_CODES.has(value.toUpperCase())) return true;
+  if (/^(q|w|wc|ll|pr|sr|se)$/.test(value)) return true;
   if (/^(draw|main|round|section|court|match|winner|seed|ranking)$/.test(value)) return true;
   return /^\d+$/.test(value);
 }
@@ -1157,10 +1192,7 @@ function cleanEntryName(line) {
     .replace(/\s+\[[A-Z]{1,3}\]\s*$/, "")
     .trim();
 
-  value = stripTrailingSeed(value);
-  value = stripTrailingCountryCode(value);
-  value = stripTrailingSeed(value);
-  return value;
+  return stripTrailingOcrMeta(value);
 }
 
 function isBye(value) {
