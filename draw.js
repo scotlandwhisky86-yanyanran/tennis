@@ -15,6 +15,7 @@ const BASE_Y = 18;
 const SECTION_COLUMNS = [42, 250, 456, 662, 868];
 const FINAL_COLUMNS = [72, 306, 540, 774];
 const QUALIFIER_OPTION = "__qualifier__";
+const DRAW_STORAGE_KEY = "wtaPredictor.drawState.v1";
 const TESSERACT_SOURCES = [
   {
     script: "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js",
@@ -46,6 +47,7 @@ const state = {
   importRows: [],
   ocrPreviewTimer: null,
   tesseractOptions: null,
+  isHydrating: false,
 };
 
 const elements = {
@@ -97,32 +99,42 @@ async function boot() {
     state.players = sortPlayersByName(snapshot.players || []);
     state.playerByName = new Map(state.players.map((player) => [normalizeName(player.name), player]));
 
+    const savedState = readStoredDrawState();
+    state.isHydrating = true;
+    restoreDrawControls(savedState);
     elements.poolStatus.textContent = `${state.players.length} active top players loaded - choose a tournament and build the first column`;
-    hydrateTournamentFilters();
+    hydrateTournamentFilters(savedState?.tournament);
+    restoreDrawSlots(savedState);
+    state.isHydrating = false;
+    saveDrawState();
     updateStatus(snapshot);
   } catch (error) {
+    state.isHydrating = false;
     elements.status.textContent = "Data unavailable";
     elements.board.innerHTML = `<p class="warning">Could not load draw data. ${escapeHtml(error.message)}</p>`;
   }
 }
 
-function hydrateTournamentFilters() {
-  renderTournamentOptions();
+function hydrateTournamentFilters(preferredTournamentId) {
+  renderTournamentOptions(preferredTournamentId);
   syncDrawSizeFromTournament("Tournament selected. The draw size was set automatically.");
   elements.surfaceFilter.addEventListener("change", () => {
     renderTournamentOptions();
     syncDrawSizeFromTournament("Tournament list changed. The draw size was set automatically.");
+    saveDrawState();
   });
   elements.levelFilter.addEventListener("change", () => {
     renderTournamentOptions();
     syncDrawSizeFromTournament("Tournament list changed. The draw size was set automatically.");
+    saveDrawState();
   });
   elements.tournament.addEventListener("change", () => {
     syncDrawSizeFromTournament("Tournament changed. The draw size was set automatically.");
+    saveDrawState();
   });
 }
 
-function renderTournamentOptions() {
+function renderTournamentOptions(preferredTournamentId = elements.tournament.value) {
   const surface = elements.surfaceFilter.value;
   const level = elements.levelFilter.value;
   const tournaments = state.tournaments
@@ -133,6 +145,9 @@ function renderTournamentOptions() {
   elements.tournament.innerHTML = tournaments.length
     ? tournaments.map(tournamentOption).join("")
     : `<option value="">No matching tournaments</option>`;
+  if (preferredTournamentId && tournaments.some((tournament) => tournament.id === preferredTournamentId)) {
+    elements.tournament.value = preferredTournamentId;
+  }
 }
 
 function tournamentOption(tournament) {
@@ -154,6 +169,7 @@ function syncDrawSizeFromTournament(message) {
   const sizeChanged = nextSize !== state.drawSize;
   state.drawSize = nextSize;
   state.slots = Array.from({ length: nextSize }, (_, index) => state.slots[index] || null);
+  refreshQualifierSlots();
 
   const maxTab = hasFinalTab() ? finalTabIndex() : 0;
   if (state.activeTab > maxTab) {
@@ -168,6 +184,7 @@ function syncDrawSizeFromTournament(message) {
   }
   renderSectionTabs();
   renderBoard();
+  saveDrawState();
 }
 
 function drawSizeForTournament(tournament) {
@@ -177,6 +194,114 @@ function drawSizeForTournament(tournament) {
   if (tournament?.level === "grand_slam") return 128;
   if (tournament?.level === "finals") return 8;
   return 32;
+}
+
+function restoreDrawControls(savedState) {
+  if (!savedState) return;
+  setSelectValue(elements.surfaceFilter, savedState.surfaceFilter);
+  setSelectValue(elements.levelFilter, savedState.levelFilter);
+}
+
+function restoreDrawSlots(savedState) {
+  if (!savedState) return;
+
+  if (Array.isArray(savedState.slots)) {
+    state.slots = Array.from({ length: state.drawSize }, (_, index) => deserializeSlot(savedState.slots[index], index));
+    refreshQualifierSlots();
+    clearProjection("Restored saved draw. Submit again to refresh projected winners.");
+  }
+
+  const maxTab = hasFinalTab() ? finalTabIndex() : 0;
+  if (Number.isFinite(savedState.activeTab)) {
+    state.activeTab = Math.max(0, Math.min(maxTab, savedState.activeTab));
+  }
+  renderSectionTabs();
+  renderBoard();
+}
+
+function saveDrawState() {
+  if (state.isHydrating) return;
+  writeJsonStorage(DRAW_STORAGE_KEY, {
+    surfaceFilter: elements.surfaceFilter.value,
+    levelFilter: elements.levelFilter.value,
+    tournament: elements.tournament.value,
+    activeTab: state.activeTab,
+    slots: state.slots.map(serializeSlot),
+  });
+}
+
+function readStoredDrawState() {
+  return readJsonStorage(DRAW_STORAGE_KEY);
+}
+
+function serializeSlot(player) {
+  if (!player) return null;
+  if (player.isQualifier) return { type: "qualifier" };
+  if (player.isExternal) return { type: "external", player: playerForStorage(player) };
+  return { type: "player", name: player.name };
+}
+
+function deserializeSlot(savedSlot, slotIndex) {
+  if (!savedSlot) return null;
+  if (savedSlot.type === "qualifier" || savedSlot.isQualifier) {
+    const player = createQualifierPlayer(slotIndex);
+    registerPlayer(player, { includeInPicker: false });
+    return player;
+  }
+
+  const name = savedSlot.name || savedSlot.player?.name;
+  const knownPlayer = name ? state.playerByName.get(normalizeName(name)) : null;
+  if (knownPlayer) return knownPlayer;
+
+  const player = savedSlot.player
+    ? createGenericPlayer({ ...savedSlot.player, isExternal: true })
+    : createExternalPlayer(name || `External Player ${slotIndex + 1}`);
+  registerPlayer(player, { includeInPicker: Boolean(player.isExternal && player.rank < 9999) });
+  return player;
+}
+
+function playerForStorage(player) {
+  return {
+    name: player.name,
+    displayName: player.displayName,
+    rank: player.rank,
+    age: player.age,
+    elo: player.elo,
+    hardElo: player.hardElo,
+    clayElo: player.clayElo,
+    grassElo: player.grassElo,
+    recent: player.recent,
+    h2h: player.h2h,
+    highLevelMatches: player.highLevelMatches,
+    surfaceRecords: player.surfaceRecords,
+    levelRecords: player.levelRecords,
+    rankMissing: player.rankMissing,
+    ageMissing: player.ageMissing,
+    isExternal: player.isExternal,
+  };
+}
+
+function setSelectValue(select, value) {
+  if (!value) return;
+  if ([...select.options].some((option) => option.value === value)) {
+    select.value = value;
+  }
+}
+
+function readJsonStorage(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key) || "null");
+  } catch {
+    return null;
+  }
+}
+
+function writeJsonStorage(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Ignore private-mode or storage quota failures; the app still works without persistence.
+  }
 }
 
 function updateStatus(snapshot) {
@@ -238,6 +363,7 @@ elements.tabs.addEventListener("click", (event) => {
   closePicker();
   renderSectionTabs();
   renderBoard();
+  saveDrawState();
 });
 
 elements.board.addEventListener("click", (event) => {
@@ -286,6 +412,7 @@ elements.pickerOptions.addEventListener("click", (event) => {
   clearProjection();
   closePicker();
   renderBoard();
+  saveDrawState();
 });
 
 document.addEventListener("click", (event) => {
@@ -349,6 +476,7 @@ elements.sampleButton.addEventListener("click", () => {
   clearProjection();
   closePicker();
   renderBoard();
+  saveDrawState();
 });
 
 elements.clearButton.addEventListener("click", () => {
@@ -356,6 +484,7 @@ elements.clearButton.addEventListener("click", () => {
   clearProjection("Draw cleared. Click a first-column slot or paste a copied list to start again.");
   closePicker();
   renderBoard();
+  saveDrawState();
 });
 
 elements.form.addEventListener("submit", (event) => {
@@ -389,7 +518,10 @@ elements.form.addEventListener("submit", (event) => {
   closePicker();
   renderBoard();
   renderSummary();
+  saveDrawState();
 });
+
+window.addEventListener("beforeunload", saveDrawState);
 
 function validateDraw(tournament) {
   const players = state.slots.filter(Boolean);
@@ -877,6 +1009,7 @@ function fillSlotsFromResolvedRows(startSlot, rows) {
   state.slots = nextSlots;
   clearProjection();
   renderBoard();
+  saveDrawState();
 
   const warnings = [];
   if (rows.length > capacity) warnings.push(`${rows.length - capacity} extra names did not fit`);
@@ -1054,17 +1187,123 @@ function registerPlayer(player, options = {}) {
   }
 }
 
+function refreshQualifierSlots() {
+  state.slots = state.slots.map((player, index) => {
+    if (!player?.isQualifier) return player;
+    const refreshed = createQualifierPlayer(index);
+    registerPlayer(refreshed, { includeInPicker: false });
+    return refreshed;
+  });
+}
+
 function createQualifierPlayer(slotIndex) {
+  const baseline = qualifierBaseline(selectedTournament());
   return createGenericPlayer({
     name: `Qualifier ${slotIndex + 1}`,
     displayName: "Qualifier",
-    rank: 150,
+    ...baseline,
+    rankMissing: 0,
+    ageMissing: 0,
+    isQualifier: true,
+  });
+}
+
+function qualifierBaseline(tournament) {
+  const candidates = qualifierCandidates(tournament);
+  const fallback = qualifierFallback(tournament);
+
+  return {
+    rank: Math.round(medianValue(candidates, (player) => player.rank, fallback.rank)),
+    age: roundOne(medianValue(candidates, (player) => player.age, fallback.age)),
+    elo: roundOne(medianValue(candidates, (player) => player.elo, fallback.elo)),
+    hardElo: roundOne(medianValue(candidates, (player) => player.hardElo, fallback.hardElo)),
+    clayElo: roundOne(medianValue(candidates, (player) => player.clayElo, fallback.clayElo)),
+    grassElo: roundOne(medianValue(candidates, (player) => player.grassElo, fallback.grassElo)),
+    recent: medianRecord(candidates, (player) => player.recent, fallback.recent),
+    highLevelMatches: Math.round(medianValue(candidates, (player) => player.highLevelMatches, fallback.highLevelMatches)),
+    surfaceRecords: {
+      hard: medianRecord(candidates, (player) => player.surfaceRecords?.hard, fallback.surfaceRecords.hard),
+      clay: medianRecord(candidates, (player) => player.surfaceRecords?.clay, fallback.surfaceRecords.clay),
+      grass: medianRecord(candidates, (player) => player.surfaceRecords?.grass, fallback.surfaceRecords.grass),
+    },
+    levelRecords: {
+      "250": medianRecord(candidates, (player) => player.levelRecords?.["250"], fallback.levelRecords["250"]),
+      "500": medianRecord(candidates, (player) => player.levelRecords?.["500"], fallback.levelRecords["500"]),
+      "1000": medianRecord(candidates, (player) => player.levelRecords?.["1000"], fallback.levelRecords["1000"]),
+      grand_slam: medianRecord(candidates, (player) => player.levelRecords?.grand_slam, fallback.levelRecords.grand_slam),
+      finals: medianRecord(candidates, (player) => player.levelRecords?.finals, fallback.levelRecords.finals),
+    },
+    h2h: {},
+    qualifierBaseline: `${tournament?.level || "default"}:${tournament?.modelSurface || "all"}`,
+  };
+}
+
+function qualifierCandidates(tournament) {
+  const range = qualifierRankRange(tournament?.level);
+  const rankedPlayers = state.players.filter((player) => Number.isFinite(player.rank) && player.rank > 0);
+  const levelBand = rankedPlayers.filter((player) => player.rank >= range.min && player.rank <= range.max);
+  if (levelBand.length >= 10) return levelBand;
+
+  const broadBand = rankedPlayers.filter((player) => player.rank >= 80 && player.rank <= 220);
+  return broadBand.length ? broadBand : rankedPlayers;
+}
+
+function qualifierRankRange(level) {
+  if (level === "grand_slam") return { min: 90, max: 170 };
+  if (level === "1000") return { min: 75, max: 155 };
+  if (level === "500") return { min: 90, max: 180 };
+  if (level === "finals") return { min: 60, max: 140 };
+  return { min: 100, max: 200 };
+}
+
+function qualifierFallback(tournament) {
+  const level = tournament?.level || "default";
+  const rank = level === "1000" ? 115 : level === "500" ? 135 : level === "grand_slam" ? 130 : 150;
+
+  return {
+    rank,
+    age: 26,
     elo: 1650,
     hardElo: 1650,
     clayElo: 1650,
     grassElo: 1600,
-    isQualifier: true,
-  });
+    recent: { wins: 5, losses: 5 },
+    highLevelMatches: 0,
+    surfaceRecords: {
+      hard: { wins: 0, losses: 0 },
+      clay: { wins: 0, losses: 0 },
+      grass: { wins: 0, losses: 0 },
+    },
+    levelRecords: {
+      "250": { wins: 0, losses: 0 },
+      "500": { wins: 0, losses: 0 },
+      "1000": { wins: 0, losses: 0 },
+      grand_slam: { wins: 0, losses: 0 },
+      finals: { wins: 0, losses: 0 },
+    },
+  };
+}
+
+function medianRecord(candidates, getRecord, fallback) {
+  return {
+    wins: Math.round(medianValue(candidates, (player) => getRecord(player)?.wins, fallback.wins)),
+    losses: Math.round(medianValue(candidates, (player) => getRecord(player)?.losses, fallback.losses)),
+  };
+}
+
+function medianValue(candidates, getValue, fallback) {
+  const values = candidates
+    .map(getValue)
+    .filter((value) => Number.isFinite(value))
+    .sort((a, b) => a - b);
+
+  if (!values.length) return fallback;
+  const middle = Math.floor(values.length / 2);
+  return values.length % 2 ? values[middle] : (values[middle - 1] + values[middle]) / 2;
+}
+
+function roundOne(value) {
+  return Math.round(value * 10) / 10;
 }
 
 function createExternalPlayer(name, data = {}) {

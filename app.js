@@ -12,6 +12,8 @@ import {
   sortPlayersByName,
 } from "./predictor-core.js";
 
+const MATCH_STORAGE_KEY = "wtaPredictor.matchState.v1";
+
 const state = {
   snapshot: null,
   model: null,
@@ -46,12 +48,15 @@ async function boot() {
     state.model = model;
     state.tournaments = tournamentsData.tournaments || [];
 
+    const savedState = readStoredMatchState();
     hydratePlayers(snapshot.players || []);
-    hydrateTournamentFilters();
+    restoreMatchControls(savedState);
+    hydrateTournamentFilters(savedState?.tournament);
     updateStatus(snapshot);
 
-    elements.playerA.value = "Iga Swiatek";
-    elements.playerB.value = "Aryna Sabalenka";
+    if (!elements.playerA.value) elements.playerA.value = "Iga Swiatek";
+    if (!elements.playerB.value) elements.playerB.value = "Aryna Sabalenka";
+    saveMatchState();
   } catch (error) {
     elements.status.textContent = "Data unavailable";
     elements.result.innerHTML = `<p class="warning">Could not load model data. ${escapeHtml(error.message)}</p>`;
@@ -75,7 +80,10 @@ function setupPlayerPicker(input, menu) {
 
   input.addEventListener("focus", () => openPlayerMenu(input, menu));
   input.addEventListener("click", () => openPlayerMenu(input, menu));
-  input.addEventListener("input", () => openPlayerMenu(input, menu));
+  input.addEventListener("input", () => {
+    openPlayerMenu(input, menu);
+    saveMatchState();
+  });
   input.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closePlayerMenu(input, menu);
   });
@@ -129,18 +137,26 @@ function renderPlayerMenu(input, menu) {
     option.addEventListener("mousedown", (event) => {
       event.preventDefault();
       input.value = option.dataset.player;
+      saveMatchState();
       closePlayerMenu(input, menu);
     });
   });
 }
 
-function hydrateTournamentFilters() {
-  renderTournamentOptions();
-  elements.surfaceFilter.addEventListener("change", renderTournamentOptions);
-  elements.levelFilter.addEventListener("change", renderTournamentOptions);
+function hydrateTournamentFilters(preferredTournamentId) {
+  renderTournamentOptions(preferredTournamentId);
+  elements.surfaceFilter.addEventListener("change", () => {
+    renderTournamentOptions();
+    saveMatchState();
+  });
+  elements.levelFilter.addEventListener("change", () => {
+    renderTournamentOptions();
+    saveMatchState();
+  });
+  elements.tournament.addEventListener("change", saveMatchState);
 }
 
-function renderTournamentOptions() {
+function renderTournamentOptions(preferredTournamentId = elements.tournament.value) {
   const surface = elements.surfaceFilter.value;
   const level = elements.levelFilter.value;
   const tournaments = filteredTournaments(surface, level);
@@ -148,6 +164,9 @@ function renderTournamentOptions() {
   elements.tournament.innerHTML = tournaments.length
     ? tournaments.map(tournamentOption).join("")
     : `<option value="">No matching tournaments</option>`;
+  if (preferredTournamentId && tournaments.some((tournament) => tournament.id === preferredTournamentId)) {
+    elements.tournament.value = preferredTournamentId;
+  }
 }
 
 function filteredTournaments(surface, level) {
@@ -177,6 +196,7 @@ elements.form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!state.snapshot || !state.model) return;
 
+  saveMatchState();
   const tournament = selectedTournament();
   if (!tournament) {
     renderMessage("Choose a WTA tournament first.", true);
@@ -199,6 +219,8 @@ elements.form.addEventListener("submit", (event) => {
   const prediction = predictMatch(state.model, playerA, playerB, tournament);
   renderPrediction(prediction);
 });
+
+window.addEventListener("beforeunload", saveMatchState);
 
 function renderPrediction(prediction) {
   const aPct = Math.round(prediction.probabilityA * 100);
@@ -273,6 +295,51 @@ function metric(label, value) {
 
 function renderMessage(message, isError = false) {
   elements.result.innerHTML = `<p class="${isError ? "warning" : ""}">${escapeHtml(message)}</p>`;
+}
+
+function restoreMatchControls(savedState) {
+  if (!savedState) return;
+  setSelectValue(elements.surfaceFilter, savedState.surfaceFilter);
+  setSelectValue(elements.levelFilter, savedState.levelFilter);
+  elements.playerA.value = savedState.playerA || "";
+  elements.playerB.value = savedState.playerB || "";
+}
+
+function saveMatchState() {
+  writeJsonStorage(MATCH_STORAGE_KEY, {
+    surfaceFilter: elements.surfaceFilter.value,
+    levelFilter: elements.levelFilter.value,
+    tournament: elements.tournament.value,
+    playerA: elements.playerA.value,
+    playerB: elements.playerB.value,
+  });
+}
+
+function readStoredMatchState() {
+  return readJsonStorage(MATCH_STORAGE_KEY);
+}
+
+function setSelectValue(select, value) {
+  if (!value) return;
+  if ([...select.options].some((option) => option.value === value)) {
+    select.value = value;
+  }
+}
+
+function readJsonStorage(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key) || "null");
+  } catch {
+    return null;
+  }
+}
+
+function writeJsonStorage(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Ignore private-mode or storage quota failures; the app still works without persistence.
+  }
 }
 
 boot();
