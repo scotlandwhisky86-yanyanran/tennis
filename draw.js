@@ -538,21 +538,25 @@ function renderSlotNumber(slotIndex, row) {
 
 function renderEntryCell(slotIndex, row) {
   const player = state.slots[slotIndex];
+  const label = player ? playerLabel(player) : "Blank / BYE";
+  const tooltip = player?.rank && player.rank < 9999 ? `${label} (#${player.rank})` : label;
   return `
     <button
       class="bracket-cell entry-cell ${player ? "has-player" : ""}"
       type="button"
       data-slot-index="${slotIndex}"
       style="--x: ${SECTION_COLUMNS[0]}px; --y: ${yForRow(row)}px;"
-      aria-label="Slot ${slotIndex + 1}${player ? ` ${player.name}` : " empty"}"
+      aria-label="Slot ${slotIndex + 1}${player ? ` ${escapeHtml(player.name)}` : " empty"}"
+      title="${escapeHtml(tooltip)}"
     >
-      <span>${player ? escapeHtml(playerLabel(player)) : ""}</span>
+      <span>${player ? escapeHtml(label) : ""}</span>
       ${player?.rank && player.rank < 9999 ? `<em>#${escapeHtml(player.rank)}</em>` : ""}
     </button>
   `;
 }
 
 function renderFinalSeed(row, player) {
+  const label = playerLabel(player) || "";
   return `
     <div class="slot-number final-seed-number" style="--x: 0px; --y: ${finalYForRow(row)}px;">
       ${row + 1}
@@ -560,8 +564,9 @@ function renderFinalSeed(row, player) {
     <div
       class="bracket-cell projected-cell ${player ? "has-winner" : ""}"
       style="--x: ${FINAL_COLUMNS[0]}px; --y: ${finalYForRow(row)}px;"
+      title="${escapeHtml(label)}"
     >
-      <span>${escapeHtml(playerLabel(player) || "")}</span>
+      <span>${escapeHtml(label)}</span>
     </div>
   `;
 }
@@ -569,12 +574,15 @@ function renderFinalSeed(row, player) {
 function renderProjectedCell(match, x, y) {
   const winner = match?.winner || null;
   const probability = winner ? winnerProbability(match, winner) : null;
+  const label = playerLabel(winner) || "";
+  const tooltip = probability !== null ? `${label} - ${Math.round(probability * 100)}%` : label;
   return `
     <div
       class="bracket-cell projected-cell ${winner ? "has-winner" : ""}"
       style="--x: ${x}px; --y: ${y}px;"
+      title="${escapeHtml(tooltip)}"
     >
-      <span>${escapeHtml(playerLabel(winner) || "")}</span>
+      <span>${escapeHtml(label)}</span>
       ${probability !== null ? `<em>${Math.round(probability * 100)}%</em>` : ""}
     </div>
   `;
@@ -740,7 +748,7 @@ function renderOcrMatches() {
       <div class="ocr-match-row ${row.status === "missing" ? "is-missing" : ""} ${row.status === "qualifier" ? "is-qualifier" : ""} ${row.status === "external" ? "is-external" : ""}">
         <span>${index + 1}</span>
         <em>${escapeHtml(row.source)}</em>
-        <strong>${escapeHtml(playerLabel(row.player) || "Not matched")}</strong>
+        <strong title="${escapeHtml(playerLabel(row.player) || "Not matched")}">${escapeHtml(playerLabel(row.player) || "Not matched")}</strong>
         <span>${escapeHtml(row.method)}</span>
       </div>
     `)
@@ -917,7 +925,7 @@ function resolveDrawEntry(entry, slotIndex) {
 function cleanOcrLine(line) {
   let value = String(line || "")
     .replace(/[|]/g, " ")
-    .replace(/[«»<>]/g, " ")
+    .replace(/[\u00ab\u00bb<>]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 
@@ -925,17 +933,23 @@ function cleanOcrLine(line) {
     .replace(/^\d{1,3}\s+/, "")
     .replace(/^[a-z][.)]\s+/i, "")
     .replace(/^(?:Q|W|WC|LL|PR|SR|SE)\s+/i, "")
-    .replace(/\(\d{1,3}\)/g, "")
-    .replace(/\s+\d{1,3}\s*$/, "")
     .trim();
 
+  value = stripTrailingSeed(value);
   value = stripTrailingCountryCode(value);
+  value = stripTrailingSeed(value);
 
   if (normalizeSearch(value).includes("qualif")) {
     return "QUALIFIER";
   }
 
   return cleanEntryName(value);
+}
+
+function stripTrailingSeed(value) {
+  return String(value || "")
+    .replace(/\s*(?:\(|\[)?\d{1,3}(?:\)|\])?\s*$/, "")
+    .trim();
 }
 
 function stripTrailingCountryCode(value) {
@@ -1003,12 +1017,17 @@ function playerSearchAliases(player) {
 }
 
 function cleanEntryName(line) {
-  return String(line || "")
+  let value = String(line || "")
     .replace(/^\s*(\(\d{1,3}\)|\[\d{1,3}\]|\d{1,3}[.)])\s*/, "")
     .replace(/\s+\(\d{1,3}\)\s*$/, "")
     .replace(/\s+\[\d{1,3}\]\s*$/, "")
     .replace(/\s+\[[A-Z]{1,3}\]\s*$/, "")
     .trim();
+
+  value = stripTrailingSeed(value);
+  value = stripTrailingCountryCode(value);
+  value = stripTrailingSeed(value);
+  return value;
 }
 
 function isBye(value) {
@@ -1264,7 +1283,7 @@ function renderSummary() {
   elements.summary.innerHTML = `
     <div class="winner-line">
       <div>
-        <h2 class="winner-name">${escapeHtml(playerLabel(champion) || "No champion")}</h2>
+        <h2 class="winner-name" title="${escapeHtml(playerLabel(champion) || "No champion")}">${escapeHtml(playerLabel(champion) || "No champion")}</h2>
         <p class="winner-meta">${escapeHtml(state.lastTournament.name)} - ${capitalize(state.lastTournament.modelSurface)} - ${formatLevel(state.lastTournament.level)} - ${state.drawSize}-slot draw</p>
       </div>
       <div class="probability">${Math.round(championOdds * 100)}%</div>
@@ -1300,9 +1319,9 @@ function renderChampionPath(champion, rounds) {
       <h2>Projected Champion Path</h2>
       <div class="path-strip">
         ${path.map((step) => `
-          <div class="path-step">
+          <div class="path-step" title="${escapeHtml(`${step.round}: ${step.opponent} - ${Math.round(step.probability * 100)}%`)}">
             <span>${escapeHtml(step.round)}</span>
-            <strong>${escapeHtml(step.opponent)}</strong>
+            <strong title="${escapeHtml(step.opponent)}">${escapeHtml(step.opponent)}</strong>
             <em>${Math.round(step.probability * 100)}%</em>
           </div>
         `).join("")}
@@ -1317,9 +1336,9 @@ function renderTitleOdds(titleOdds) {
       <h2>Title Odds</h2>
       <div class="odds-table">
         ${titleOdds.slice(0, 10).map((row, index) => `
-          <div class="odds-row">
+          <div class="odds-row" title="${escapeHtml(`${playerLabel(row.player)} - ${Math.round(row.probability * 100)}%`)}">
             <span>${index + 1}</span>
-            <strong>${escapeHtml(playerLabel(row.player))}</strong>
+            <strong title="${escapeHtml(playerLabel(row.player))}">${escapeHtml(playerLabel(row.player))}</strong>
             <div class="mini-track"><div class="mini-fill" style="width: ${Math.max(3, row.probability * 100)}%"></div></div>
             <em>${Math.round(row.probability * 100)}%</em>
           </div>

@@ -109,7 +109,7 @@ function renderPlayerMenu(input, menu) {
   const query = normalizeName(input.value);
   const matches = state.players
     .filter((player) => !query || normalizeName(player.name).includes(query))
-    .slice(0, 200);
+    .slice(0, 250);
 
   if (!matches.length) {
     menu.innerHTML = `<div class="player-empty">No players found</div>`;
@@ -118,8 +118,8 @@ function renderPlayerMenu(input, menu) {
 
   menu.innerHTML = matches
     .map((player) => `
-      <button class="player-option" type="button" role="option" data-player="${escapeHtml(player.name)}">
-        <span>${escapeHtml(player.name)}</span>
+      <button class="player-option" type="button" role="option" data-player="${escapeHtml(player.name)}" title="${escapeHtml(player.name)}">
+        <span title="${escapeHtml(player.name)}">${escapeHtml(player.name)}</span>
         <span class="player-rank">#${escapeHtml(player.rank)}</span>
       </button>
     `)
@@ -212,7 +212,7 @@ function renderPrediction(prediction) {
   elements.result.innerHTML = `
     <div class="winner-line">
       <div>
-        <h2 class="winner-name">${escapeHtml(prediction.favorite.name)}</h2>
+        <h2 class="winner-name" title="${escapeHtml(prediction.favorite.name)}">${escapeHtml(prediction.favorite.name)}</h2>
         <p class="winner-meta">${escapeHtml(prediction.tournament.name)} - ${capitalize(prediction.tournament.modelSurface)} - ${formatLevel(prediction.tournament.level)}</p>
       </div>
       <div class="probability">${favPct}%</div>
@@ -254,8 +254,8 @@ function renderSnapshotWarnings() {
 
 function renderBar(name, percent, alt) {
   return `
-    <div class="bar-row">
-      <strong>${escapeHtml(name)}</strong>
+    <div class="bar-row" title="${escapeHtml(`${name} - ${percent}%`)}">
+      <strong title="${escapeHtml(name)}">${escapeHtml(name)}</strong>
       <div class="bar-track"><div class="bar-fill ${alt ? "alt" : ""}" style="width: ${percent}%"></div></div>
       <span>${percent}%</span>
     </div>
@@ -264,9 +264,9 @@ function renderBar(name, percent, alt) {
 
 function metric(label, value) {
   return `
-    <div class="metric">
+    <div class="metric" title="${escapeHtml(`${label}: ${value}`)}">
       <div class="metric-label">${escapeHtml(label)}</div>
-      <p class="metric-value">${escapeHtml(value)}</p>
+      <p class="metric-value" title="${escapeHtml(value)}">${escapeHtml(value)}</p>
     </div>
   `;
 }
