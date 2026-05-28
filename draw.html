@@ -108,6 +108,15 @@
 
               <img class="import-preview" id="import-preview" alt="Draw image preview" hidden />
 
+              <div class="field">
+                <label for="ocr-scope">Image area</label>
+                <select id="ocr-scope">
+                  <option value="auto">Auto detect</option>
+                  <option value="left">Left entry column</option>
+                  <option value="full">Full image</option>
+                </select>
+              </div>
+
               <div class="import-actions">
                 <button class="primary-action" type="button" id="recognize-image">Recognize image</button>
                 <button class="secondary-action" type="button" id="match-ocr-text">Match names</button>

@@ -82,6 +82,7 @@ const elements = {
   imageFile: document.querySelector("#draw-image-file"),
   chooseImage: document.querySelector("#choose-image"),
   importPreview: document.querySelector("#import-preview"),
+  ocrScope: document.querySelector("#ocr-scope"),
   recognizeImage: document.querySelector("#recognize-image"),
   matchOcrText: document.querySelector("#match-ocr-text"),
   ocrStatus: document.querySelector("#ocr-status"),
@@ -785,12 +786,13 @@ async function recognizeImportImage() {
     elements.ocrStatus.textContent = "Loading English OCR engine...";
     await loadTesseract();
 
-    elements.ocrStatus.textContent = "Recognizing English text...";
-    const result = await window.Tesseract.recognize(state.importImageFile, "eng", {
+    const ocrImage = await prepareImageForOcr(state.importImageFile);
+    elements.ocrStatus.textContent = `Recognizing English text${ocrImage.wasCropped ? " from left entry column" : ""}...`;
+    const result = await window.Tesseract.recognize(ocrImage.blob, "eng", {
       ...(state.tesseractOptions || {}),
       logger: (message) => {
         if (message.status === "recognizing text" && Number.isFinite(message.progress)) {
-          elements.ocrStatus.textContent = `Recognizing English text - ${Math.round(message.progress * 100)}%`;
+          elements.ocrStatus.textContent = `Recognizing English text${ocrImage.wasCropped ? " from left entry column" : ""} - ${Math.round(message.progress * 100)}%`;
         }
       },
     });
@@ -803,6 +805,123 @@ async function recognizeImportImage() {
   } finally {
     elements.recognizeImage.disabled = false;
   }
+}
+
+async function prepareImageForOcr(file) {
+  const scope = elements.ocrScope?.value || "auto";
+  if (scope === "full") return { blob: file, wasCropped: false };
+
+  try {
+    const bitmap = await createImageBitmap(file);
+    const crop = scope === "left" ? leftEntryColumnCrop(bitmap) : autoEntryColumnCrop(bitmap);
+    if (!crop) {
+      bitmap.close?.();
+      return { blob: file, wasCropped: false };
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = crop.width;
+    canvas.height = crop.height;
+    const context = canvas.getContext("2d", { willReadFrequently: false });
+    context.drawImage(bitmap, crop.x, crop.y, crop.width, crop.height, 0, 0, crop.width, crop.height);
+    bitmap.close?.();
+
+    const blob = await canvasToBlob(canvas, file.type || "image/png");
+    return { blob, wasCropped: true };
+  } catch {
+    return { blob: file, wasCropped: false };
+  }
+}
+
+function autoEntryColumnCrop(bitmap) {
+  const bounds = detectContentBounds(bitmap);
+  if (!bounds) return null;
+
+  const aspect = bitmap.width / Math.max(bitmap.height, 1);
+  const contentAspect = bounds.width / Math.max(bounds.height, 1);
+  const likelyTreeDraw = aspect > 1.05 || contentAspect > 0.62 || bitmap.width > 850;
+  return likelyTreeDraw ? leftEntryColumnCrop(bitmap, bounds) : null;
+}
+
+function leftEntryColumnCrop(bitmap, knownBounds = null) {
+  const bounds = knownBounds || detectContentBounds(bitmap) || {
+    left: 0,
+    top: 0,
+    right: bitmap.width,
+    bottom: bitmap.height,
+    width: bitmap.width,
+    height: bitmap.height,
+  };
+
+  const left = Math.max(0, bounds.left - Math.round(bitmap.width * 0.01));
+  const top = Math.max(0, bounds.top - Math.round(bitmap.height * 0.015));
+  const columnWidth = clamp(bounds.width * 0.3, 300, 560);
+  const right = Math.min(bitmap.width, left + Math.round(columnWidth));
+  const bottom = Math.min(bitmap.height, bounds.bottom + Math.round(bitmap.height * 0.015));
+
+  if (right - left < 80 || bottom - top < 80) return null;
+  return { x: left, y: top, width: right - left, height: bottom - top };
+}
+
+function detectContentBounds(bitmap) {
+  const sampleCanvas = document.createElement("canvas");
+  const maxSampleWidth = 900;
+  const scale = Math.min(1, maxSampleWidth / bitmap.width);
+  sampleCanvas.width = Math.max(1, Math.round(bitmap.width * scale));
+  sampleCanvas.height = Math.max(1, Math.round(bitmap.height * scale));
+
+  const context = sampleCanvas.getContext("2d", { willReadFrequently: true });
+  context.drawImage(bitmap, 0, 0, sampleCanvas.width, sampleCanvas.height);
+  const pixels = context.getImageData(0, 0, sampleCanvas.width, sampleCanvas.height).data;
+
+  let left = sampleCanvas.width;
+  let top = sampleCanvas.height;
+  let right = 0;
+  let bottom = 0;
+  const step = 3;
+
+  for (let y = 0; y < sampleCanvas.height; y += step) {
+    for (let x = 0; x < sampleCanvas.width; x += step) {
+      const offset = (y * sampleCanvas.width + x) * 4;
+      if (!isContentPixel(pixels[offset], pixels[offset + 1], pixels[offset + 2], pixels[offset + 3])) continue;
+      left = Math.min(left, x);
+      top = Math.min(top, y);
+      right = Math.max(right, x);
+      bottom = Math.max(bottom, y);
+    }
+  }
+
+  if (left >= right || top >= bottom) return null;
+  return {
+    left: Math.max(0, Math.floor(left / scale)),
+    top: Math.max(0, Math.floor(top / scale)),
+    right: Math.min(bitmap.width, Math.ceil(right / scale)),
+    bottom: Math.min(bitmap.height, Math.ceil(bottom / scale)),
+    width: Math.ceil((right - left) / scale),
+    height: Math.ceil((bottom - top) / scale),
+  };
+}
+
+function isContentPixel(red, green, blue, alpha) {
+  if (alpha < 40) return false;
+  const average = (red + green + blue) / 3;
+  const nearWhite = red > 244 && green > 244 && blue > 244;
+  const nearBlack = average < 28;
+  const saturatedHighlight = red > 180 && green > 180 && blue < 150;
+  return (!nearWhite && !nearBlack) || saturatedHighlight;
+}
+
+function canvasToBlob(canvas, type) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (blob) resolve(blob);
+      else reject(new Error("Could not prepare OCR image."));
+    }, type);
+  });
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
 }
 
 function loadTesseract() {
@@ -1040,6 +1159,7 @@ function parseOcrEntries(text) {
   return String(text || "")
     .replace(/\r/g, "\n")
     .split(/\n+/)
+    .filter((line) => !isRawOcrNoise(line))
     .map(cleanOcrLine)
     .filter(Boolean)
     .filter((line) => !isOcrNoise(line));
@@ -1070,9 +1190,10 @@ function cleanOcrLine(line) {
     .trim();
 
   value = value
-    .replace(/^\d{1,3}\s+/, "")
-    .replace(/^[a-z][.)]\s+/i, "")
+    .replace(/^[a-z][.)]\s+/, "")
+    .replace(/^(\d{1,3}\s+){1,2}/, "")
     .replace(/^(?:Q|W|WC|LL|PR|SR|SE)\s+/i, "")
+    .replace(/^(\d{1,3}\s+){1,2}/, "")
     .trim();
 
   value = stripTrailingOcrMeta(value);
@@ -1129,7 +1250,15 @@ function stripTrailingCountryCode(value) {
   return value;
 }
 
+function isRawOcrNoise(line) {
+  const value = String(line || "").trim();
+  if (/^[A-Z]\.\s+[A-Za-z]/.test(value)) return true;
+  return isOcrNoise(value);
+}
+
 function isOcrNoise(line) {
+  if (/^[A-Z]\.\s+[A-Za-z]/.test(String(line || "").trim())) return true;
+
   const compact = String(line || "").toLowerCase().replace(/\s+/g, "");
   if (/^[a-z]{0,2}\d{1,2}\/\d{1,2}$/.test(compact)) return true;
 
@@ -1138,6 +1267,7 @@ function isOcrNoise(line) {
   if (COUNTRY_CODES.has(value.toUpperCase())) return true;
   if (/^(q|w|wc|ll|pr|sr|se)$/.test(value)) return true;
   if (/^(draw|main|round|section|court|match|winner|seed|ranking)$/.test(value)) return true;
+  if (/(singlesmaindraw|tophalf|bottom|roundof|quarterfinal|semifinal|final|champion|winner|seededplayers|withdrawals|retirements|wtasupervisor|released|presentedby|strasbourg|rolandgarros|prizemoney)/.test(value)) return true;
   return /^\d+$/.test(value);
 }
 
