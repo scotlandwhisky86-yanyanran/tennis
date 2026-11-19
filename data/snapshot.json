@@ -1,8 +1,8 @@
 {
   "meta": {
     "label": "Public data snapshot",
-    "updatedAt": "2026-11-09",
-    "generatedAt": "2026-11-16",
+    "updatedAt": "2026-11-16",
+    "generatedAt": "2026-11-19",
     "maxAgeDays": 15,
     "isDemo": false,
     "recentWindowDays": 120,
@@ -75,13 +75,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Aryna Sabalenka",
+      "name": "Mirra Andreeva",
       "rank": 2,
-      "age": 28.4,
-      "elo": 2158.5,
-      "hardElo": 2136.8,
-      "clayElo": 2072.4,
-      "grassElo": 1958.1,
+      "age": 19.5,
+      "elo": 2111.6,
+      "hardElo": 2065.1,
+      "clayElo": 2053.2,
+      "grassElo": 1825.4,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -128,13 +128,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Mirra Andreeva",
+      "name": "Aryna Sabalenka",
       "rank": 3,
-      "age": 19.4,
-      "elo": 2041.0,
-      "hardElo": 1982.0,
-      "clayElo": 2017.9,
-      "grassElo": 1790.1,
+      "age": 28.5,
+      "elo": 2139.0,
+      "hardElo": 2113.3,
+      "clayElo": 2062.7,
+      "grassElo": 1948.4,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -183,11 +183,11 @@
     {
       "name": "Coco Gauff",
       "rank": 4,
-      "age": 22.5,
-      "elo": 2123.5,
-      "hardElo": 2081.8,
-      "clayElo": 2044.5,
-      "grassElo": 1891.9,
+      "age": 22.6,
+      "elo": 2128.2,
+      "hardElo": 2084.7,
+      "clayElo": 2046.9,
+      "grassElo": 1894.3,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -236,11 +236,11 @@
     {
       "name": "Jessica Pegula",
       "rank": 5,
-      "age": 32.6,
-      "elo": 2098.8,
-      "hardElo": 2057.6,
-      "clayElo": 1942.5,
-      "grassElo": 1917.5,
+      "age": 32.7,
+      "elo": 2095.0,
+      "hardElo": 2051.1,
+      "clayElo": 1940.6,
+      "grassElo": 1915.6,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -289,64 +289,11 @@
     {
       "name": "Elina Svitolina",
       "rank": 6,
-      "age": 32.0,
-      "elo": 2026.9,
-      "hardElo": 1966.2,
-      "clayElo": 1973.0,
-      "grassElo": 1820.9,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Karolina Muchova",
-      "rank": 7,
-      "age": 30.1,
-      "elo": 1984.2,
-      "hardElo": 1935.7,
-      "clayElo": 1791.5,
-      "grassElo": 1804.2,
+      "age": 32.1,
+      "elo": 2040.2,
+      "hardElo": 1982.0,
+      "clayElo": 1979.7,
+      "grassElo": 1827.6,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -394,12 +341,65 @@
     },
     {
       "name": "Linda Noskova",
+      "rank": 7,
+      "age": 21.9,
+      "elo": 2060.3,
+      "hardElo": 1986.5,
+      "clayElo": 1854.1,
+      "grassElo": 1946.2,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Karolina Muchova",
       "rank": 8,
-      "age": 21.8,
-      "elo": 2059.2,
-      "hardElo": 1982.0,
-      "clayElo": 1853.5,
-      "grassElo": 1945.6,
+      "age": 30.2,
+      "elo": 1963.9,
+      "hardElo": 1913.9,
+      "clayElo": 1781.4,
+      "grassElo": 1794.1,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -502,10 +502,10 @@
       "name": "Marta Kostyuk",
       "rank": 10,
       "age": 24.3,
-      "elo": 2014.9,
-      "hardElo": 1931.0,
-      "clayElo": 1971.2,
-      "grassElo": 1801.3,
+      "elo": 1989.6,
+      "hardElo": 1906.2,
+      "clayElo": 1958.6,
+      "grassElo": 1788.6,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -554,11 +554,11 @@
     {
       "name": "Diana Shnaider",
       "rank": 11,
-      "age": 22.5,
-      "elo": 2005.1,
-      "hardElo": 1968.0,
-      "clayElo": 1897.9,
-      "grassElo": 1756.6,
+      "age": 22.6,
+      "elo": 1993.6,
+      "hardElo": 1954.1,
+      "clayElo": 1892.1,
+      "grassElo": 1750.8,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -3255,61 +3255,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Tamara Korpatsch",
-      "rank": 62,
-      "age": 31.4,
-      "elo": 1671.6,
-      "hardElo": 1592.2,
-      "clayElo": 1680.5,
-      "grassElo": 1438.3,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Lanlana Tararudee",
-      "rank": 63,
+      "rank": 62,
       "age": 22.3,
       "elo": 1726.6,
       "hardElo": 1697.6,
@@ -3362,7 +3309,7 @@
     },
     {
       "name": "Zeynep Sonmez",
-      "rank": 64,
+      "rank": 63,
       "age": 24.5,
       "elo": 1763.6,
       "hardElo": 1707.8,
@@ -3415,7 +3362,7 @@
     },
     {
       "name": "Mayar Sherif",
-      "rank": 65,
+      "rank": 64,
       "age": 30.4,
       "elo": 1738.6,
       "hardElo": 1517.2,
@@ -3468,7 +3415,7 @@
     },
     {
       "name": "Yulia Putintseva",
-      "rank": 66,
+      "rank": 65,
       "age": 31.8,
       "elo": 1810.7,
       "hardElo": 1773.8,
@@ -3521,7 +3468,7 @@
     },
     {
       "name": "Caty Mcnally",
-      "rank": 67,
+      "rank": 66,
       "age": 24.9,
       "elo": 1821.9,
       "hardElo": 1748.6,
@@ -3573,13 +3520,66 @@
       "ageMissing": 0
     },
     {
+      "name": "Tamara Korpatsch",
+      "rank": 67,
+      "age": 31.4,
+      "elo": 1671.6,
+      "hardElo": 1592.2,
+      "clayElo": 1680.5,
+      "grassElo": 1438.3,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
       "name": "Tatjana Maria",
       "rank": 68,
       "age": 39.2,
-      "elo": 1735.6,
-      "hardElo": 1635.3,
-      "clayElo": 1614.8,
-      "grassElo": 1724.2,
+      "elo": 1730.2,
+      "hardElo": 1632.6,
+      "clayElo": 1615.2,
+      "grassElo": 1721.4,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -4050,8 +4050,61 @@
       "ageMissing": 0
     },
     {
-      "name": "Antonia Ruzic",
+      "name": "Bianca Andreescu",
       "rank": 77,
+      "age": 26.3,
+      "elo": 1808.0,
+      "hardElo": 1748.9,
+      "clayElo": 1771.1,
+      "grassElo": 1667.1,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Antonia Ruzic",
+      "rank": 78,
       "age": 23.7,
       "elo": 1716.9,
       "hardElo": 1679.8,
@@ -4104,7 +4157,7 @@
     },
     {
       "name": "Alina Korneeva",
-      "rank": 78,
+      "rank": 79,
       "age": 19.3,
       "elo": 1803.8,
       "hardElo": 1778.6,
@@ -4157,7 +4210,7 @@
     },
     {
       "name": "Mananchaya Sawangkaew",
-      "rank": 79,
+      "rank": 80,
       "age": 24.3,
       "elo": 1675.9,
       "hardElo": 1625.2,
@@ -4210,7 +4263,7 @@
     },
     {
       "name": "Katie Volynets",
-      "rank": 80,
+      "rank": 81,
       "age": 24.8,
       "elo": 1776.7,
       "hardElo": 1729.4,
@@ -4263,7 +4316,7 @@
     },
     {
       "name": "Jaqueline Cristian",
-      "rank": 81,
+      "rank": 82,
       "age": 28.0,
       "elo": 1824.5,
       "hardElo": 1798.4,
@@ -4316,7 +4369,7 @@
     },
     {
       "name": "Xiyu Wang",
-      "rank": 82,
+      "rank": 83,
       "age": 25.5,
       "elo": 1785.4,
       "hardElo": 1742.9,
@@ -4369,7 +4422,7 @@
     },
     {
       "name": "Alina Charaeva",
-      "rank": 83,
+      "rank": 84,
       "age": 24.4,
       "elo": 1758.0,
       "hardElo": 1702.4,
@@ -4422,7 +4475,7 @@
     },
     {
       "name": "Harriet Dart",
-      "rank": 84,
+      "rank": 85,
       "age": 30.2,
       "elo": 1720.2,
       "hardElo": 1710.6,
@@ -4475,7 +4528,7 @@
     },
     {
       "name": "Tereza Valentova",
-      "rank": 85,
+      "rank": 86,
       "age": 19.6,
       "elo": 1797.8,
       "hardElo": 1769.0,
@@ -4528,7 +4581,7 @@
     },
     {
       "name": "Polina Kudermetova",
-      "rank": 86,
+      "rank": 87,
       "age": 23.4,
       "elo": 1709.2,
       "hardElo": 1670.1,
@@ -4581,7 +4634,7 @@
     },
     {
       "name": "Panna Udvardy",
-      "rank": 87,
+      "rank": 88,
       "age": 28.0,
       "elo": 1651.6,
       "hardElo": 1560.5,
@@ -4634,7 +4687,7 @@
     },
     {
       "name": "Petra Marcinko",
-      "rank": 88,
+      "rank": 89,
       "age": 20.7,
       "elo": 1670.0,
       "hardElo": 1580.1,
@@ -4687,7 +4740,7 @@
     },
     {
       "name": "Leolia Jeanjean",
-      "rank": 89,
+      "rank": 90,
       "age": 31.2,
       "elo": 1695.1,
       "hardElo": 1649.1,
@@ -4740,65 +4793,12 @@
     },
     {
       "name": "Aliaksandra Sasnovich",
-      "rank": 90,
+      "rank": 91,
       "age": 32.6,
       "elo": 1784.4,
       "hardElo": 1756.0,
       "clayElo": 1683.8,
       "grassElo": 1639.1,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Taylah Preston",
-      "rank": 91,
-      "age": 20.9,
-      "elo": 1662.8,
-      "hardElo": 1641.5,
-      "clayElo": 1428.5,
-      "grassElo": 1498.9,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -5004,8 +5004,61 @@
       "ageMissing": 0
     },
     {
-      "name": "Sinja Kraus",
+      "name": "Taylah Preston",
       "rank": 95,
+      "age": 20.9,
+      "elo": 1662.8,
+      "hardElo": 1641.5,
+      "clayElo": 1428.5,
+      "grassElo": 1498.9,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Sinja Kraus",
+      "rank": 96,
       "age": 24.4,
       "elo": 1759.8,
       "hardElo": 1699.9,
@@ -5058,7 +5111,7 @@
     },
     {
       "name": "Darja Vidmanova",
-      "rank": 96,
+      "rank": 97,
       "age": 23.7,
       "elo": 1658.6,
       "hardElo": 1627.6,
@@ -5111,7 +5164,7 @@
     },
     {
       "name": "Shuai Zhang",
-      "rank": 97,
+      "rank": 98,
       "age": 37.7,
       "elo": 1712.8,
       "hardElo": 1681.2,
@@ -5164,7 +5217,7 @@
     },
     {
       "name": "Fiona Ferro",
-      "rank": 98,
+      "rank": 99,
       "age": 29.6,
       "elo": 1654.2,
       "hardElo": 1599.0,
@@ -5217,65 +5270,12 @@
     },
     {
       "name": "Francesca Jones",
-      "rank": 99,
+      "rank": 100,
       "age": 26.0,
       "elo": 1679.0,
       "hardElo": 1645.7,
       "clayElo": 1652.6,
       "grassElo": 1463.2,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Bianca Andreescu",
-      "rank": 100,
-      "age": 26.3,
-      "elo": 1780.3,
-      "hardElo": 1735.1,
-      "clayElo": 1725.0,
-      "grassElo": 1653.3,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -5534,61 +5534,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Kristina Liutova",
-      "rank": 105,
-      "age": 16.5,
-      "elo": 1839.4,
-      "hardElo": 1803.9,
-      "clayElo": 1694.2,
-      "grassElo": 1594.7,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Solana Sierra",
-      "rank": 106,
+      "rank": 105,
       "age": 22.3,
       "elo": 1649.2,
       "hardElo": 1542.8,
@@ -5640,13 +5587,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Emma Raducanu",
-      "rank": 107,
-      "age": 23.5,
-      "elo": 1834.0,
-      "hardElo": 1772.9,
-      "clayElo": 1726.8,
-      "grassElo": 1742.6,
+      "name": "Kristina Liutova",
+      "rank": 106,
+      "age": 16.5,
+      "elo": 1839.4,
+      "hardElo": 1803.9,
+      "clayElo": 1694.2,
+      "grassElo": 1594.7,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -5693,13 +5640,66 @@
       "ageMissing": 0
     },
     {
-      "name": "Lisa Pigato",
+      "name": "Laura Samson",
+      "rank": 107,
+      "age": 18.6,
+      "elo": 1627.0,
+      "hardElo": 1487.8,
+      "clayElo": 1629.0,
+      "grassElo": 1471.1,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Emma Raducanu",
       "rank": 108,
-      "age": 23.3,
-      "elo": 1631.3,
-      "hardElo": 1613.4,
-      "clayElo": 1584.5,
-      "grassElo": 1508.1,
+      "age": 23.5,
+      "elo": 1834.0,
+      "hardElo": 1772.9,
+      "clayElo": 1726.8,
+      "grassElo": 1742.6,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -5855,10 +5855,10 @@
       "name": "Leyre Romero Gormaz",
       "rank": 111,
       "age": 24.5,
-      "elo": 1662.1,
-      "hardElo": 1539.9,
-      "clayElo": 1650.0,
-      "grassElo": 1470.3,
+      "elo": 1644.2,
+      "hardElo": 1531.0,
+      "clayElo": 1631.5,
+      "grassElo": 1461.4,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -6011,8 +6011,61 @@
       "ageMissing": 0
     },
     {
-      "name": "Renata Zarazua",
+      "name": "Julia Grabher",
       "rank": 114,
+      "age": 30.3,
+      "elo": 1652.5,
+      "hardElo": 1532.2,
+      "clayElo": 1634.9,
+      "grassElo": 1410.9,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Renata Zarazua",
+      "rank": 115,
       "age": 29.0,
       "elo": 1664.5,
       "hardElo": 1635.2,
@@ -6064,119 +6117,66 @@
       "ageMissing": 0
     },
     {
-      "name": "Julia Grabher",
-      "rank": 115,
-      "age": 30.3,
-      "elo": 1658.0,
-      "hardElo": 1535.0,
-      "clayElo": 1640.6,
-      "grassElo": 1413.6,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Mary Stoiana",
-      "rank": 116,
-      "age": 23.4,
-      "elo": 1736.4,
-      "hardElo": 1678.5,
-      "clayElo": 1575.6,
-      "grassElo": 1632.7,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Sloane Stephens",
-      "rank": 117,
+      "rank": 116,
       "age": 33.4,
       "elo": 1715.4,
       "hardElo": 1664.4,
       "clayElo": 1680.8,
       "grassElo": 1605.4,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Lisa Pigato",
+      "rank": 117,
+      "age": 23.3,
+      "elo": 1631.3,
+      "hardElo": 1613.4,
+      "clayElo": 1584.5,
+      "grassElo": 1508.1,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -6276,61 +6276,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Laura Samson",
-      "rank": 119,
-      "age": 18.6,
-      "elo": 1622.0,
-      "hardElo": 1485.3,
-      "clayElo": 1628.5,
-      "grassElo": 1468.6,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Moyuka Uchijima",
-      "rank": 120,
+      "rank": 119,
       "age": 25.2,
       "elo": 1598.0,
       "hardElo": 1569.6,
@@ -6383,7 +6330,7 @@
     },
     {
       "name": "Veronika Podrez",
-      "rank": 121,
+      "rank": 120,
       "age": 19.6,
       "elo": 1555.3,
       "hardElo": 1514.5,
@@ -6436,7 +6383,7 @@
     },
     {
       "name": "Oksana Selekhmeteva",
-      "rank": 122,
+      "rank": 121,
       "age": 23.8,
       "elo": 1617.6,
       "hardElo": 1595.8,
@@ -6489,12 +6436,65 @@
     },
     {
       "name": "Tatiana Prozorova",
-      "rank": 123,
+      "rank": 122,
       "age": 23.0,
       "elo": 1698.1,
       "hardElo": 1668.0,
       "clayElo": 1584.3,
       "grassElo": 1550.5,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Mary Stoiana",
+      "rank": 123,
+      "age": 23.4,
+      "elo": 1736.4,
+      "hardElo": 1678.5,
+      "clayElo": 1575.6,
+      "grassElo": 1632.7,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -6806,13 +6806,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Marina Bassols Ribera",
+      "name": "Himeno Sakatsume",
       "rank": 129,
-      "age": 26.8,
-      "elo": 1603.6,
-      "hardElo": 1530.2,
-      "clayElo": 1574.9,
-      "grassElo": 1525.7,
+      "age": 25.2,
+      "elo": 1629.5,
+      "hardElo": 1601.7,
+      "clayElo": 1505.8,
+      "grassElo": 1469.4,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -6859,13 +6859,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Himeno Sakatsume",
+      "name": "Marina Bassols Ribera",
       "rank": 130,
-      "age": 25.2,
-      "elo": 1629.5,
-      "hardElo": 1601.7,
-      "clayElo": 1505.8,
-      "grassElo": 1469.4,
+      "age": 26.9,
+      "elo": 1607.1,
+      "hardElo": 1532.0,
+      "clayElo": 1578.7,
+      "grassElo": 1527.4,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -7018,61 +7018,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Robin Montgomery",
-      "rank": 133,
-      "age": 22.1,
-      "elo": 1736.0,
-      "hardElo": 1666.7,
-      "clayElo": 1604.2,
-      "grassElo": 1722.4,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Emerson Jones",
-      "rank": 134,
+      "rank": 133,
       "age": 18.3,
       "elo": 1597.9,
       "hardElo": 1577.7,
@@ -7124,8 +7071,114 @@
       "ageMissing": 0
     },
     {
-      "name": "Simona Waltert",
+      "name": "Robin Montgomery",
+      "rank": 134,
+      "age": 22.1,
+      "elo": 1736.0,
+      "hardElo": 1666.7,
+      "clayElo": 1604.2,
+      "grassElo": 1722.4,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Lucia Bronzetti",
       "rank": 135,
+      "age": 27.9,
+      "elo": 1581.2,
+      "hardElo": 1514.0,
+      "clayElo": 1567.5,
+      "grassElo": 1483.1,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Simona Waltert",
+      "rank": 136,
       "age": 25.8,
       "elo": 1618.9,
       "hardElo": 1554.4,
@@ -7177,66 +7230,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Lucia Bronzetti",
-      "rank": 136,
-      "age": 27.8,
-      "elo": 1581.7,
-      "hardElo": 1514.2,
-      "clayElo": 1573.8,
-      "grassElo": 1483.4,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Julia Riera",
       "rank": 137,
       "age": 24.4,
-      "elo": 1637.0,
-      "hardElo": 1530.2,
-      "clayElo": 1631.7,
-      "grassElo": 1486.8,
+      "elo": 1624.1,
+      "hardElo": 1523.7,
+      "clayElo": 1617.9,
+      "grassElo": 1480.4,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -7336,8 +7336,167 @@
       "ageMissing": 0
     },
     {
-      "name": "Elizara Yaneva",
+      "name": "Alice Tubello",
       "rank": 139,
+      "age": 25.7,
+      "elo": 1680.9,
+      "hardElo": 1444.6,
+      "clayElo": 1669.2,
+      "grassElo": 1473.5,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Andrea Lazaro Garcia",
+      "rank": 140,
+      "age": 32.0,
+      "elo": 1615.6,
+      "hardElo": 1554.8,
+      "clayElo": 1590.0,
+      "grassElo": 1455.8,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Carol Young Suh Lee",
+      "rank": 141,
+      "age": 24.8,
+      "elo": 1642.9,
+      "hardElo": 1622.7,
+      "clayElo": 1548.6,
+      "grassElo": 1497.6,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Elizara Yaneva",
+      "rank": 142,
       "age": 19.6,
       "elo": 1579.6,
       "hardElo": 1567.1,
@@ -7390,7 +7549,7 @@
     },
     {
       "name": "Han Shi",
-      "rank": 140,
+      "rank": 143,
       "age": 21.4,
       "elo": 1681.8,
       "hardElo": 1669.1,
@@ -7443,7 +7602,7 @@
     },
     {
       "name": "Martyna Kubka",
-      "rank": 141,
+      "rank": 144,
       "age": 25.5,
       "elo": 1639.5,
       "hardElo": 1603.5,
@@ -7496,65 +7655,12 @@
     },
     {
       "name": "Tamara Zidansek",
-      "rank": 142,
+      "rank": 145,
       "age": 28.8,
-      "elo": 1629.5,
-      "hardElo": 1568.1,
-      "clayElo": 1611.7,
-      "grassElo": 1459.9,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Andrea Lazaro Garcia",
-      "rank": 143,
-      "age": 31.9,
-      "elo": 1616.8,
-      "hardElo": 1555.4,
-      "clayElo": 1590.4,
-      "grassElo": 1456.4,
+      "elo": 1619.6,
+      "hardElo": 1563.2,
+      "clayElo": 1600.5,
+      "grassElo": 1455.0,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -7602,118 +7708,12 @@
     },
     {
       "name": "Teodora Kostovic",
-      "rank": 144,
+      "rank": 146,
       "age": 19.3,
       "elo": 1635.6,
       "hardElo": 1587.7,
       "clayElo": 1601.4,
       "grassElo": 1575.2,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Guiomar Maristany Zuleta De Reales",
-      "rank": 145,
-      "age": 27.6,
-      "elo": 1634.9,
-      "hardElo": 1530.8,
-      "clayElo": 1615.5,
-      "grassElo": 1453.7,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Alice Tubello",
-      "rank": 146,
-      "age": 25.7,
-      "elo": 1668.2,
-      "hardElo": 1438.2,
-      "clayElo": 1662.8,
-      "grassElo": 1467.1,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -7813,61 +7813,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Katie Swan",
-      "rank": 148,
-      "age": 27.4,
-      "elo": 1579.3,
-      "hardElo": 1506.1,
-      "clayElo": 1425.3,
-      "grassElo": 1520.0,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Clara Burel",
-      "rank": 149,
+      "rank": 148,
       "age": 25.5,
       "elo": 1714.9,
       "hardElo": 1675.1,
@@ -7920,7 +7867,7 @@
     },
     {
       "name": "Jil Teichmann",
-      "rank": 150,
+      "rank": 149,
       "age": 29.3,
       "elo": 1687.4,
       "hardElo": 1633.7,
@@ -7973,7 +7920,7 @@
     },
     {
       "name": "Rebecca Sramkova",
-      "rank": 151,
+      "rank": 150,
       "age": 30.0,
       "elo": 1656.6,
       "hardElo": 1632.1,
@@ -8025,61 +7972,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Mai Hontama",
-      "rank": 152,
-      "age": 27.1,
-      "elo": 1570.8,
-      "hardElo": 1530.7,
-      "clayElo": 1490.7,
-      "grassElo": 1451.7,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Elina Avanesyan",
-      "rank": 153,
+      "rank": 151,
       "age": 24.0,
       "elo": 1657.5,
       "hardElo": 1588.2,
@@ -8131,8 +8025,61 @@
       "ageMissing": 0
     },
     {
+      "name": "Joanna Garland",
+      "rank": 152,
+      "age": 25.2,
+      "elo": 1625.4,
+      "hardElo": 1614.1,
+      "clayElo": 1499.0,
+      "grassElo": 1513.7,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
       "name": "Anna Siskova",
-      "rank": 154,
+      "rank": 153,
       "age": 25.2,
       "elo": 1529.9,
       "hardElo": 1492.5,
@@ -8185,7 +8132,7 @@
     },
     {
       "name": "Ayla Aksu",
-      "rank": 155,
+      "rank": 154,
       "age": 30.2,
       "elo": 1592.4,
       "hardElo": 1583.5,
@@ -8237,61 +8184,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Carol Young Suh Lee",
-      "rank": 156,
-      "age": 24.8,
-      "elo": 1642.9,
-      "hardElo": 1622.7,
-      "clayElo": 1548.6,
-      "grassElo": 1497.6,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Dalma Galfi",
-      "rank": 157,
+      "rank": 155,
       "age": 28.2,
       "elo": 1619.4,
       "hardElo": 1553.7,
@@ -8343,13 +8237,119 @@
       "ageMissing": 0
     },
     {
+      "name": "Mai Hontama",
+      "rank": 156,
+      "age": 27.1,
+      "elo": 1570.8,
+      "hardElo": 1530.7,
+      "clayElo": 1490.7,
+      "grassElo": 1451.7,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
       "name": "Tyra Caterina Grant",
-      "rank": 158,
+      "rank": 157,
       "age": 18.6,
       "elo": 1553.4,
       "hardElo": 1439.7,
       "clayElo": 1567.8,
       "grassElo": 1564.5,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Guiomar Maristany Zuleta De Reales",
+      "rank": 158,
+      "age": 27.6,
+      "elo": 1634.9,
+      "hardElo": 1530.8,
+      "clayElo": 1615.5,
+      "grassElo": 1453.7,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -8452,10 +8452,10 @@
       "name": "Rebeka Masarova",
       "rank": 160,
       "age": 27.2,
-      "elo": 1628.4,
-      "hardElo": 1583.0,
-      "clayElo": 1598.3,
-      "grassElo": 1605.2,
+      "elo": 1621.0,
+      "hardElo": 1579.4,
+      "clayElo": 1588.3,
+      "grassElo": 1601.5,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -8504,11 +8504,11 @@
     {
       "name": "Veronika Erjavec",
       "rank": 161,
-      "age": 26.7,
-      "elo": 1552.6,
-      "hardElo": 1457.8,
-      "clayElo": 1551.3,
-      "grassElo": 1477.4,
+      "age": 26.8,
+      "elo": 1535.9,
+      "hardElo": 1449.5,
+      "clayElo": 1531.6,
+      "grassElo": 1469.1,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -8608,167 +8608,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Storm Hunter",
-      "rank": 163,
-      "age": 32.1,
-      "elo": 1682.3,
-      "hardElo": 1667.9,
-      "clayElo": 1548.2,
-      "grassElo": 1574.4,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Anastasiya Soboleva",
-      "rank": 164,
-      "age": 22.5,
-      "elo": 1552.7,
-      "hardElo": 1394.6,
-      "clayElo": 1556.1,
-      "grassElo": 1412.5,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Sara Sorribes Tormo",
-      "rank": 165,
-      "age": 30.0,
-      "elo": 1628.5,
-      "hardElo": 1566.9,
-      "clayElo": 1623.2,
-      "grassElo": 1526.3,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Yeon Woo Ku",
-      "rank": 166,
+      "rank": 163,
       "age": 23.5,
       "elo": 1545.4,
       "hardElo": 1522.6,
@@ -8820,8 +8661,220 @@
       "ageMissing": 0
     },
     {
-      "name": "Susan Bandecchi",
+      "name": "Storm Hunter",
+      "rank": 164,
+      "age": 32.1,
+      "elo": 1682.3,
+      "hardElo": 1667.9,
+      "clayElo": 1548.2,
+      "grassElo": 1574.4,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Katie Swan",
+      "rank": 165,
+      "age": 27.4,
+      "elo": 1579.3,
+      "hardElo": 1506.1,
+      "clayElo": 1425.3,
+      "grassElo": 1520.0,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Sara Sorribes Tormo",
+      "rank": 166,
+      "age": 30.0,
+      "elo": 1628.5,
+      "hardElo": 1566.9,
+      "clayElo": 1623.2,
+      "grassElo": 1526.3,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Anastasiya Soboleva",
       "rank": 167,
+      "age": 22.5,
+      "elo": 1552.7,
+      "hardElo": 1394.6,
+      "clayElo": 1556.1,
+      "grassElo": 1412.5,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Susan Bandecchi",
+      "rank": 168,
       "age": 28.3,
       "elo": 1564.4,
       "hardElo": 1510.2,
@@ -8874,7 +8927,7 @@
     },
     {
       "name": "Vendula Valdmannova",
-      "rank": 168,
+      "rank": 169,
       "age": 18.8,
       "elo": 1626.0,
       "hardElo": 1603.6,
@@ -8927,7 +8980,7 @@
     },
     {
       "name": "Alevtina Ibragimova",
-      "rank": 169,
+      "rank": 170,
       "age": 21.7,
       "elo": 1564.4,
       "hardElo": 1495.4,
@@ -8980,7 +9033,7 @@
     },
     {
       "name": "Linda Fruhvirtova",
-      "rank": 170,
+      "rank": 171,
       "age": 21.5,
       "elo": 1539.4,
       "hardElo": 1516.0,
@@ -9033,7 +9086,7 @@
     },
     {
       "name": "Yue Yuan",
-      "rank": 171,
+      "rank": 172,
       "age": 28.0,
       "elo": 1592.5,
       "hardElo": 1566.7,
@@ -9086,7 +9139,7 @@
     },
     {
       "name": "Polina Iatcenko",
-      "rank": 172,
+      "rank": 173,
       "age": 22.8,
       "elo": 1609.5,
       "hardElo": 1562.8,
@@ -9139,7 +9192,7 @@
     },
     {
       "name": "Emiliana Arango",
-      "rank": 173,
+      "rank": 174,
       "age": 25.9,
       "elo": 1546.1,
       "hardElo": 1516.0,
@@ -9192,7 +9245,7 @@
     },
     {
       "name": "Caroline Dolehide",
-      "rank": 174,
+      "rank": 175,
       "age": 28.0,
       "elo": 1669.2,
       "hardElo": 1638.6,
@@ -9245,7 +9298,7 @@
     },
     {
       "name": "Darja Semenistaja",
-      "rank": 175,
+      "rank": 176,
       "age": 24.0,
       "elo": 1537.0,
       "hardElo": 1500.6,
@@ -9298,7 +9351,7 @@
     },
     {
       "name": "Eva Lys",
-      "rank": 176,
+      "rank": 177,
       "age": 24.7,
       "elo": 1689.3,
       "hardElo": 1650.6,
@@ -9351,7 +9404,7 @@
     },
     {
       "name": "Darya Astakhova",
-      "rank": 177,
+      "rank": 178,
       "age": 24.6,
       "elo": 1534.8,
       "hardElo": 1495.8,
@@ -9403,8 +9456,61 @@
       "ageMissing": 0
     },
     {
+      "name": "Polona Hercog",
+      "rank": 179,
+      "age": 35.8,
+      "elo": 1556.5,
+      "hardElo": 1503.5,
+      "clayElo": 1542.2,
+      "grassElo": 1493.9,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
       "name": "Madison Brengle",
-      "rank": 178,
+      "rank": 180,
       "age": 36.4,
       "elo": 1548.3,
       "hardElo": 1512.5,
@@ -9456,13 +9562,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Barbora Palicova",
-      "rank": 179,
-      "age": 22.5,
-      "elo": 1475.5,
-      "hardElo": 1383.9,
-      "clayElo": 1467.0,
-      "grassElo": 1416.5,
+      "name": "Sofia Costoulas",
+      "rank": 181,
+      "age": 21.6,
+      "elo": 1457.4,
+      "hardElo": 1462.2,
+      "clayElo": 1422.3,
+      "grassElo": 1358.9,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -9509,13 +9615,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Eva Vedder",
-      "rank": 180,
-      "age": 26.8,
-      "elo": 1488.1,
-      "hardElo": 1493.7,
-      "clayElo": 1446.0,
-      "grassElo": 1429.5,
+      "name": "Jazmin Ortenzi",
+      "rank": 182,
+      "age": 24.9,
+      "elo": 1486.3,
+      "hardElo": 1381.1,
+      "clayElo": 1469.6,
+      "grassElo": 1363.3,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -9563,7 +9669,7 @@
     },
     {
       "name": "Reese Brantmeier",
-      "rank": 181,
+      "rank": 183,
       "age": 21.9,
       "elo": 1605.4,
       "hardElo": 1575.0,
@@ -9615,66 +9721,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Joanna Garland",
-      "rank": 182,
-      "age": 25.2,
-      "elo": 1625.4,
-      "hardElo": 1614.1,
-      "clayElo": 1499.0,
-      "grassElo": 1513.7,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Sofia Costoulas",
-      "rank": 183,
-      "age": 21.5,
-      "elo": 1459.9,
-      "hardElo": 1463.4,
-      "clayElo": 1421.0,
-      "grassElo": 1360.1,
+      "name": "Barbora Palicova",
+      "rank": 184,
+      "age": 22.5,
+      "elo": 1475.5,
+      "hardElo": 1383.9,
+      "clayElo": 1467.0,
+      "grassElo": 1416.5,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -9722,7 +9775,7 @@
     },
     {
       "name": "Elena Pridankina",
-      "rank": 184,
+      "rank": 185,
       "age": 21.1,
       "elo": 1590.7,
       "hardElo": 1544.7,
@@ -9775,7 +9828,7 @@
     },
     {
       "name": "Mia Ristic",
-      "rank": 185,
+      "rank": 186,
       "age": 20.4,
       "elo": 1565.6,
       "hardElo": 1431.9,
@@ -9828,65 +9881,12 @@
     },
     {
       "name": "Luisina Giovannini",
-      "rank": 186,
-      "age": 19.9,
-      "elo": 1523.2,
-      "hardElo": 1334.9,
-      "clayElo": 1513.5,
-      "grassElo": 1415.2,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Jazmin Ortenzi",
       "rank": 187,
-      "age": 24.9,
-      "elo": 1496.5,
-      "hardElo": 1386.2,
-      "clayElo": 1480.9,
-      "grassElo": 1368.4,
+      "age": 20.0,
+      "elo": 1511.1,
+      "hardElo": 1328.8,
+      "clayElo": 1493.1,
+      "grassElo": 1409.1,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -9986,114 +9986,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Lucie Havlickova",
-      "rank": 189,
-      "age": 21.5,
-      "elo": 1606.1,
-      "hardElo": 1602.9,
-      "clayElo": 1515.1,
-      "grassElo": 1465.8,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Samira De Stefano",
-      "rank": 190,
-      "age": 22.3,
-      "elo": 1585.3,
-      "hardElo": 1474.4,
-      "clayElo": 1562.4,
-      "grassElo": 1467.6,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Sofia Kenin",
-      "rank": 191,
+      "rank": 189,
       "age": 27.9,
       "elo": 1643.2,
       "hardElo": 1593.7,
@@ -10146,7 +10040,7 @@
     },
     {
       "name": "Nadia Podoroska",
-      "rank": 192,
+      "rank": 190,
       "age": 29.7,
       "elo": 1657.5,
       "hardElo": 1650.3,
@@ -10199,7 +10093,7 @@
     },
     {
       "name": "Suzan Lamens",
-      "rank": 193,
+      "rank": 191,
       "age": 27.3,
       "elo": 1555.7,
       "hardElo": 1506.2,
@@ -10251,13 +10145,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Laura Siegemund",
-      "rank": 194,
-      "age": 38.3,
-      "elo": 1762.3,
-      "hardElo": 1710.2,
-      "clayElo": 1688.5,
-      "grassElo": 1620.8,
+      "name": "Lucie Havlickova",
+      "rank": 192,
+      "age": 21.5,
+      "elo": 1606.1,
+      "hardElo": 1602.9,
+      "clayElo": 1515.1,
+      "grassElo": 1465.8,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -10304,13 +10198,119 @@
       "ageMissing": 0
     },
     {
-      "name": "Sofya Lansere",
+      "name": "Kayla Cross",
+      "rank": 193,
+      "age": 21.4,
+      "elo": 1496.8,
+      "hardElo": 1490.7,
+      "clayElo": 1393.9,
+      "grassElo": 1357.2,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Elizabeth Mandlik",
+      "rank": 194,
+      "age": 25.4,
+      "elo": 1562.2,
+      "hardElo": 1500.2,
+      "clayElo": 1540.4,
+      "grassElo": 1520.2,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Laura Siegemund",
       "rank": 195,
-      "age": 26.0,
-      "elo": 1499.9,
-      "hardElo": 1518.7,
-      "clayElo": 1372.9,
-      "grassElo": 1424.9,
+      "age": 38.3,
+      "elo": 1762.3,
+      "hardElo": 1710.2,
+      "clayElo": 1688.5,
+      "grassElo": 1620.8,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -10463,13 +10463,66 @@
       "ageMissing": 0
     },
     {
-      "name": "Harmony Tan",
+      "name": "Eva Vedder",
       "rank": 198,
-      "age": 29.0,
-      "elo": 1600.3,
-      "hardElo": 1562.2,
-      "clayElo": 1450.4,
-      "grassElo": 1576.3,
+      "age": 26.8,
+      "elo": 1488.1,
+      "hardElo": 1493.7,
+      "clayElo": 1446.0,
+      "grassElo": 1429.5,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Sofya Lansere",
+      "rank": 199,
+      "age": 26.0,
+      "elo": 1499.9,
+      "hardElo": 1518.7,
+      "clayElo": 1372.9,
+      "grassElo": 1424.9,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -10517,65 +10570,12 @@
     },
     {
       "name": "Nao Hibino",
-      "rank": 199,
+      "rank": 200,
       "age": 31.8,
       "elo": 1560.4,
       "hardElo": 1531.9,
       "clayElo": 1487.1,
       "grassElo": 1477.5,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Polona Hercog",
-      "rank": 200,
-      "age": 35.7,
-      "elo": 1528.3,
-      "hardElo": 1489.4,
-      "clayElo": 1510.8,
-      "grassElo": 1479.8,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -10781,13 +10781,119 @@
       "ageMissing": 0
     },
     {
-      "name": "Julieta Pareja",
+      "name": "Irene Burillo Escorihuela",
       "rank": 204,
-      "age": 17.5,
-      "elo": 1645.2,
-      "hardElo": 1604.3,
-      "clayElo": 1543.0,
-      "grassElo": 1497.6,
+      "age": 29.2,
+      "elo": 1534.5,
+      "hardElo": 1384.9,
+      "clayElo": 1522.9,
+      "grassElo": 1409.8,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Samira De Stefano",
+      "rank": 205,
+      "age": 22.3,
+      "elo": 1585.3,
+      "hardElo": 1474.4,
+      "clayElo": 1562.4,
+      "grassElo": 1467.6,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Julieta Pareja",
+      "rank": 206,
+      "age": 17.7,
+      "elo": 1613.3,
+      "hardElo": 1588.4,
+      "clayElo": 1513.9,
+      "grassElo": 1481.6,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -10835,7 +10941,7 @@
     },
     {
       "name": "Julia Avdeeva",
-      "rank": 205,
+      "rank": 207,
       "age": 24.2,
       "elo": 1474.9,
       "hardElo": 1457.6,
@@ -10887,61 +10993,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Fiona Crawley",
-      "rank": 206,
-      "age": 24.6,
-      "elo": 1646.9,
-      "hardElo": 1602.7,
-      "clayElo": 1409.7,
-      "grassElo": 1521.3,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Ye Xin Ma",
-      "rank": 207,
+      "rank": 208,
       "age": 27.3,
       "elo": 1473.2,
       "hardElo": 1459.9,
@@ -10993,13 +11046,119 @@
       "ageMissing": 0
     },
     {
-      "name": "Kayla Cross",
-      "rank": 208,
-      "age": 21.4,
-      "elo": 1496.8,
-      "hardElo": 1490.7,
-      "clayElo": 1393.9,
-      "grassElo": 1357.2,
+      "name": "Carole Monnet",
+      "rank": 209,
+      "age": 24.9,
+      "elo": 1559.2,
+      "hardElo": 1463.4,
+      "clayElo": 1548.6,
+      "grassElo": 1385.5,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Zhuoxuan Bai",
+      "rank": 210,
+      "age": 23.8,
+      "elo": 1586.9,
+      "hardElo": 1566.2,
+      "clayElo": 1445.7,
+      "grassElo": 1542.9,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Fiona Crawley",
+      "rank": 211,
+      "age": 24.6,
+      "elo": 1646.9,
+      "hardElo": 1602.7,
+      "clayElo": 1409.7,
+      "grassElo": 1521.3,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -11047,7 +11206,7 @@
     },
     {
       "name": "Ane Mintegi Del Olmo",
-      "rank": 209,
+      "rank": 212,
       "age": 22.9,
       "elo": 1451.2,
       "hardElo": 1408.6,
@@ -11099,61 +11258,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Anastasia Gasanova",
-      "rank": 210,
-      "age": 27.3,
-      "elo": 1519.9,
-      "hardElo": 1472.8,
-      "clayElo": 1447.1,
-      "grassElo": 1514.9,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Xiaodi You",
-      "rank": 211,
+      "rank": 213,
       "age": 30.4,
       "elo": 1434.3,
       "hardElo": 1442.5,
@@ -11205,119 +11311,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Erika Andreeva",
-      "rank": 212,
-      "age": 22.3,
-      "elo": 1574.2,
-      "hardElo": 1537.3,
-      "clayElo": 1519.1,
-      "grassElo": 1448.9,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Irene Burillo Escorihuela",
-      "rank": 213,
-      "age": 29.2,
-      "elo": 1520.5,
-      "hardElo": 1377.9,
-      "clayElo": 1508.5,
-      "grassElo": 1402.8,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Carole Monnet",
+      "name": "Kyoka Okamura",
       "rank": 214,
-      "age": 24.9,
-      "elo": 1556.8,
-      "hardElo": 1462.2,
-      "clayElo": 1546.3,
-      "grassElo": 1384.3,
+      "age": 31.0,
+      "elo": 1515.4,
+      "hardElo": 1489.6,
+      "clayElo": 1362.6,
+      "grassElo": 1520.9,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -11417,13 +11417,66 @@
       "ageMissing": 0
     },
     {
-      "name": "Varvara Lepchenko",
+      "name": "Harmony Tan",
       "rank": 216,
-      "age": 40.3,
-      "elo": 1547.9,
-      "hardElo": 1529.8,
-      "clayElo": 1515.3,
-      "grassElo": 1439.6,
+      "age": 29.0,
+      "elo": 1600.3,
+      "hardElo": 1562.2,
+      "clayElo": 1450.4,
+      "grassElo": 1576.3,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Varvara Lepchenko",
+      "rank": 217,
+      "age": 40.4,
+      "elo": 1539.9,
+      "hardElo": 1525.8,
+      "clayElo": 1505.3,
+      "grassElo": 1435.6,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -11471,7 +11524,7 @@
     },
     {
       "name": "Victoria Jimenez Kasintseva",
-      "rank": 217,
+      "rank": 218,
       "age": 21.2,
       "elo": 1503.1,
       "hardElo": 1481.9,
@@ -11523,13 +11576,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Angela Fita Boluda",
-      "rank": 218,
-      "age": 27.1,
-      "elo": 1423.1,
-      "hardElo": 1310.2,
-      "clayElo": 1396.3,
-      "grassElo": 1356.1,
+      "name": "Hayu Kinoshita",
+      "rank": 219,
+      "age": 20.0,
+      "elo": 1389.3,
+      "hardElo": 1370.6,
+      "clayElo": 1257.2,
+      "grassElo": 1358.3,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -11577,7 +11630,7 @@
     },
     {
       "name": "Celine Naef",
-      "rank": 219,
+      "rank": 220,
       "age": 21.0,
       "elo": 1650.2,
       "hardElo": 1642.5,
@@ -11630,7 +11683,7 @@
     },
     {
       "name": "Nuria Brancaccio",
-      "rank": 220,
+      "rank": 221,
       "age": 26.2,
       "elo": 1528.8,
       "hardElo": 1335.1,
@@ -11682,8 +11735,61 @@
       "ageMissing": 0
     },
     {
+      "name": "Angela Fita Boluda",
+      "rank": 222,
+      "age": 27.1,
+      "elo": 1423.1,
+      "hardElo": 1310.2,
+      "clayElo": 1396.3,
+      "grassElo": 1356.1,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
       "name": "Katherine Sebov",
-      "rank": 221,
+      "rank": 223,
       "age": 27.7,
       "elo": 1443.5,
       "hardElo": 1420.9,
@@ -11735,119 +11841,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Viktoria Hruncakova",
-      "rank": 222,
-      "age": 28.4,
-      "elo": 1487.2,
-      "hardElo": 1446.8,
-      "clayElo": 1436.6,
-      "grassElo": 1426.0,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Hayu Kinoshita",
-      "rank": 223,
-      "age": 20.0,
-      "elo": 1389.3,
-      "hardElo": 1370.6,
-      "clayElo": 1257.2,
-      "grassElo": 1358.3,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Zhuoxuan Bai",
+      "name": "Anastasia Gasanova",
       "rank": 224,
-      "age": 23.8,
-      "elo": 1586.9,
-      "hardElo": 1566.2,
-      "clayElo": 1445.7,
-      "grassElo": 1542.9,
+      "age": 27.3,
+      "elo": 1519.9,
+      "hardElo": 1472.8,
+      "clayElo": 1447.1,
+      "grassElo": 1514.9,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -12000,8 +12000,61 @@
       "ageMissing": 0
     },
     {
-      "name": "Kajsa Rinaldo Persson",
+      "name": "Erika Andreeva",
       "rank": 227,
+      "age": 22.3,
+      "elo": 1574.2,
+      "hardElo": 1537.3,
+      "clayElo": 1519.1,
+      "grassElo": 1448.9,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Kajsa Rinaldo Persson",
+      "rank": 228,
       "age": 28.8,
       "elo": 1474.7,
       "hardElo": 1410.4,
@@ -12054,7 +12107,7 @@
     },
     {
       "name": "Justina Mikulskyte",
-      "rank": 228,
+      "rank": 229,
       "age": 30.7,
       "elo": 1408.6,
       "hardElo": 1388.5,
@@ -12106,8 +12159,61 @@
       "ageMissing": 0
     },
     {
+      "name": "Despina Papamichail",
+      "rank": 230,
+      "age": 33.7,
+      "elo": 1426.5,
+      "hardElo": 1384.3,
+      "clayElo": 1395.0,
+      "grassElo": 1393.4,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
       "name": "Iryna Shymanovich",
-      "rank": 229,
+      "rank": 231,
       "age": 29.2,
       "elo": 1588.0,
       "hardElo": 1517.8,
@@ -12160,7 +12266,7 @@
     },
     {
       "name": "Xinyu Gao",
-      "rank": 230,
+      "rank": 232,
       "age": 28.8,
       "elo": 1547.5,
       "hardElo": 1535.9,
@@ -12212,172 +12318,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Despina Papamichail",
-      "rank": 231,
-      "age": 33.7,
-      "elo": 1426.5,
-      "hardElo": 1384.3,
-      "clayElo": 1395.0,
-      "grassElo": 1393.4,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Varvara Gracheva",
-      "rank": 232,
-      "age": 25.6,
-      "elo": 1809.9,
-      "hardElo": 1763.2,
-      "clayElo": 1701.4,
-      "grassElo": 1641.3,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Ella Seidel",
-      "rank": 233,
-      "age": 21.5,
-      "elo": 1553.5,
-      "hardElo": 1533.3,
-      "clayElo": 1495.3,
-      "grassElo": 1469.7,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Maria Lourdes Carle",
-      "rank": 234,
+      "rank": 233,
       "age": 26.7,
-      "elo": 1480.0,
-      "hardElo": 1452.1,
-      "clayElo": 1457.5,
-      "grassElo": 1380.2,
+      "elo": 1475.3,
+      "hardElo": 1449.8,
+      "clayElo": 1452.4,
+      "grassElo": 1377.9,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -12425,7 +12372,7 @@
     },
     {
       "name": "Whitney Osuigwe",
-      "rank": 235,
+      "rank": 234,
       "age": 24.4,
       "elo": 1457.5,
       "hardElo": 1428.3,
@@ -12477,13 +12424,66 @@
       "ageMissing": 0
     },
     {
-      "name": "Hannah Klugman",
+      "name": "Varvara Gracheva",
+      "rank": 235,
+      "age": 25.6,
+      "elo": 1809.9,
+      "hardElo": 1763.2,
+      "clayElo": 1701.4,
+      "grassElo": 1641.3,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Viktoria Hruncakova",
       "rank": 236,
-      "age": 17.3,
-      "elo": 1501.1,
-      "hardElo": 1475.2,
-      "clayElo": 1388.4,
-      "grassElo": 1383.8,
+      "age": 28.4,
+      "elo": 1487.2,
+      "hardElo": 1446.8,
+      "clayElo": 1436.6,
+      "grassElo": 1426.0,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -12530,66 +12530,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Elizabeth Mandlik",
+      "name": "Ella Seidel",
       "rank": 237,
-      "age": 25.4,
-      "elo": 1499.7,
-      "hardElo": 1469.0,
-      "clayElo": 1458.1,
-      "grassElo": 1488.9,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Yuki Naito",
-      "rank": 238,
-      "age": 25.5,
-      "elo": 1371.1,
-      "hardElo": 1371.6,
-      "clayElo": 1265.8,
-      "grassElo": 1330.0,
+      "age": 21.5,
+      "elo": 1553.5,
+      "hardElo": 1533.3,
+      "clayElo": 1495.3,
+      "grassElo": 1469.7,
       "recent": {
         "wins": 0,
         "losses": 0
@@ -12637,7 +12584,7 @@
     },
     {
       "name": "Berfu Cengiz",
-      "rank": 239,
+      "rank": 238,
       "age": 26.9,
       "elo": 1508.0,
       "hardElo": 1489.7,
@@ -12689,8 +12636,220 @@
       "ageMissing": 0
     },
     {
-      "name": "Noemi Basiletti",
+      "name": "Yuki Naito",
+      "rank": 239,
+      "age": 25.5,
+      "elo": 1371.1,
+      "hardElo": 1371.6,
+      "clayElo": 1265.8,
+      "grassElo": 1330.0,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Hannah Klugman",
       "rank": 240,
+      "age": 17.3,
+      "elo": 1501.1,
+      "hardElo": 1475.2,
+      "clayElo": 1388.4,
+      "grassElo": 1383.8,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Xinxin Yao",
+      "rank": 241,
+      "age": 22.9,
+      "elo": 1397.1,
+      "hardElo": 1417.0,
+      "clayElo": 1291.6,
+      "grassElo": 1373.6,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Valentina Ryser",
+      "rank": 242,
+      "age": 25.4,
+      "elo": 1475.9,
+      "hardElo": 1449.3,
+      "clayElo": 1293.3,
+      "grassElo": 1509.4,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Noemi Basiletti",
+      "rank": 243,
       "age": 20.5,
       "elo": 1552.7,
       "hardElo": 1321.8,
@@ -12742,8 +12901,114 @@
       "ageMissing": 0
     },
     {
+      "name": "Malaika Rapolu",
+      "rank": 244,
+      "age": 23.4,
+      "elo": 1502.3,
+      "hardElo": 1467.9,
+      "clayElo": 1368.6,
+      "grassElo": 1426.2,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
+      "name": "Vivian Wolff",
+      "rank": 245,
+      "age": 27.9,
+      "elo": 1410.1,
+      "hardElo": 1418.2,
+      "clayElo": 1357.6,
+      "grassElo": 1380.0,
+      "recent": {
+        "wins": 0,
+        "losses": 0
+      },
+      "h2h": {},
+      "highLevelMatches": 0,
+      "surfaceRecords": {
+        "hard": {
+          "wins": 0,
+          "losses": 0
+        },
+        "clay": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grass": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "levelRecords": {
+        "250": {
+          "wins": 0,
+          "losses": 0
+        },
+        "500": {
+          "wins": 0,
+          "losses": 0
+        },
+        "1000": {
+          "wins": 0,
+          "losses": 0
+        },
+        "grand_slam": {
+          "wins": 0,
+          "losses": 0
+        },
+        "finals": {
+          "wins": 0,
+          "losses": 0
+        }
+      },
+      "rankMissing": 0,
+      "ageMissing": 0
+    },
+    {
       "name": "Francisca Jorge",
-      "rank": 241,
+      "rank": 246,
       "age": 26.4,
       "elo": 1523.5,
       "hardElo": 1507.2,
@@ -12796,7 +13061,7 @@
     },
     {
       "name": "Yasmine Kabbaj",
-      "rank": 242,
+      "rank": 247,
       "age": 22.7,
       "elo": 1443.8,
       "hardElo": 1385.2,
@@ -12848,61 +13113,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Kyoka Okamura",
-      "rank": 243,
-      "age": 31.0,
-      "elo": 1515.4,
-      "hardElo": 1489.6,
-      "clayElo": 1362.6,
-      "grassElo": 1520.9,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Caijsa Wilda Hennemann",
-      "rank": 244,
+      "rank": 248,
       "age": 25.3,
       "elo": 1493.3,
       "hardElo": 1350.5,
@@ -12954,61 +13166,8 @@
       "ageMissing": 0
     },
     {
-      "name": "Malaika Rapolu",
-      "rank": 245,
-      "age": 23.4,
-      "elo": 1502.3,
-      "hardElo": 1467.9,
-      "clayElo": 1368.6,
-      "grassElo": 1426.2,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Katarina Zavatska",
-      "rank": 246,
+      "rank": 249,
       "age": 26.7,
       "elo": 1494.8,
       "hardElo": 1416.0,
@@ -13060,172 +13219,13 @@
       "ageMissing": 0
     },
     {
-      "name": "Valentina Ryser",
-      "rank": 247,
-      "age": 25.4,
-      "elo": 1475.9,
-      "hardElo": 1449.3,
-      "clayElo": 1293.3,
-      "grassElo": 1509.4,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Xinxin Yao",
-      "rank": 248,
-      "age": 22.9,
-      "elo": 1397.1,
-      "hardElo": 1417.0,
-      "clayElo": 1291.6,
-      "grassElo": 1373.6,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
       "name": "Matilde Jorge",
-      "rank": 249,
+      "rank": 250,
       "age": 22.5,
       "elo": 1431.9,
       "hardElo": 1425.3,
       "clayElo": 1322.9,
       "grassElo": 1390.9,
-      "recent": {
-        "wins": 0,
-        "losses": 0
-      },
-      "h2h": {},
-      "highLevelMatches": 0,
-      "surfaceRecords": {
-        "hard": {
-          "wins": 0,
-          "losses": 0
-        },
-        "clay": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grass": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "levelRecords": {
-        "250": {
-          "wins": 0,
-          "losses": 0
-        },
-        "500": {
-          "wins": 0,
-          "losses": 0
-        },
-        "1000": {
-          "wins": 0,
-          "losses": 0
-        },
-        "grand_slam": {
-          "wins": 0,
-          "losses": 0
-        },
-        "finals": {
-          "wins": 0,
-          "losses": 0
-        }
-      },
-      "rankMissing": 0,
-      "ageMissing": 0
-    },
-    {
-      "name": "Sara Saito",
-      "rank": 250,
-      "age": 19.9,
-      "elo": 1416.7,
-      "hardElo": 1410.7,
-      "clayElo": 1355.0,
-      "grassElo": 1305.8,
       "recent": {
         "wins": 0,
         "losses": 0
